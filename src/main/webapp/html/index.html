@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<title>湘阁</title>
+		<!-- 移动设备支持 -->
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<link href="../css/reset.css" rel="stylesheet" type="text/css">
+		<link href="../css/mod47.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+		<script src="../js/swipe2.js" type="text/javascript"></script>
+		<script>
+			$(function() {
+				var winheight = $(window).height();
+				//$('#wrap').css('min-height',winheight-30+'px');//footer居底
+				$('.blankwhite').css('height', '0px');
+				var winwidth = $(window).width();
+				//$('.contentimgcl').css('height',winwidth*0.2+'px');
+			});
+		</script>
+	</head>
+
+	<body onselectstart="return true;" ondragstart="return false;">
+		<div id="wrap" class="clr">
+			<div class="banner">
+				<div style="width:100%;align:center;margin:0 auto;" id="imageswzi">
+					
+					<div id="displayswipe" style="-webkit-transform:translate3d(0,0,0);" style="display:none;">
+						<div style="visibility: visible;" id="banner_box" class="box_swipe">
+							<ul style="list-style: none outside none; width: 4480px; transition-duration: 500ms; transform: translate3d(-1920px, 0px, 0px);">
+
+								<li style="width: 640px; display: table-cell; vertical-align: top;">
+									<img src="../images/web_banner1.jpg" id="bannerimg13202" style="width:100%;">
+								</li>
+								<li style="width: 640px; display: table-cell; vertical-align: top;">
+									<img src="../images/web_banner2.jpg" id="bannerimg16063" style="width:100%;">
+								</li>
+								<li style="width: 640px; display: table-cell; vertical-align: top;">
+									<img src="../images/web_banner3.jpg" id="bannerimg16063" style="width:100%;">
+								</li>
+							</ul>
+							<ol>
+
+								<li ></li>&nbsp;
+								<li ></li>&nbsp;
+								<li ></li>&nbsp;
+
+							</ol>
+						</div>
+					</div>
+
+					<div id="displayone" style="display:none;">
+						<img src="../images/web_banner2.jpg" alt=" " id="onebannerimg" style="width:100%;">
+					</div>
+					<script>
+						$(function() {
+							$("#displayswipe").show();
+							$("#displayone").hide();
+
+							if(3 == 1) {
+								$("#displayswipe").hide();
+								$("#displayone").show();
+							}
+
+							new Swipe(document.getElementById('banner_box'), {
+								speed: 500,
+								auto: 3000,
+								callback: function() {
+									var lis = $(this.element).next("ol").children();
+									lis.removeClass("on").eq(this.index).addClass("on");
+								}
+							});
+						});
+					</script>
+
+					<!-- End SlidesJS Required -->
+				</div>
+			</div>
+			<ul class="telnav clr">
+				<a href="about_us.html" class="nav1">
+
+					<li>
+						<div class="icon_w">
+							<div class="icon">
+								<img src="../images/web_icon1.png" class='contentimgcl' width="100%" />
+							</div>
+						</div>
+						<span>关于我们</span>
+					</li>
+				</a>
+				<a href="team.html"  class="nav2">
+
+					<li>
+						<div class="icon_w">
+							<div class="icon">
+								<img src="../images/web_icon2.png">
+							</div>
+						</div>
+						<span>团队文化</span>
+					</li>
+				</a>
+				<a href="company.html"  class="nav3">
+
+					<li>
+						<div class="icon_w">
+							<div class="icon">
+								<img src="../images/web_icon3.png" class='contentimgcl' width="100%" />
+							</div>
+						</div>
+						<span>门店风采</span>
+					</li>
+				</a>
+				<a href="zhaopin.html" class="nav4">
+
+					<li>
+						<div class="icon_w">
+							<div class="icon">
+								<img src="../images/web_icon4.png" class='contentimgcl' width="100%" />
+							</div>
+						</div>
+						<span>招贤纳士</span>
+					</li>
+				</a>
+			</ul>
+			<div class="clear" style="margin-top: 60px;"></div>	
+			<div class="tab_footer" id="opendingcan">在线订餐</div>
+		</div>
+		<script>
+			$("#opendingcan").click(function(){
+				window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxae28c4b698ede3e8&redirect_uri=http://xzg.vzzj.cn/sm/index.html&response_type=code&scope=snsapi_base&state=state#wechat_redirect";
+			})
+				
+		</script>
+	</body>
+
+</html>

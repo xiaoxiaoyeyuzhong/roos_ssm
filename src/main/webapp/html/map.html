@@ -1,0 +1,171 @@
+<!DOCTYPE html>  
+<html>  
+	<head>  
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+		<script src="../js/jquery-2.0.3.min.js"></script>
+		<title>湘阁餐饮连锁</title>  
+	   <style>
+	   		.mui-table-view .mui-media-object{
+	   			max-width:30px;height: 30px;
+	   		}
+	   		.mui-bar{
+	   			background:#FF6A6A;
+	   		}
+	   		.mui-icon{
+	   			color:white;
+	   		}
+	   		.mui-table-view-cell{
+	   			line-height: 30px;
+	   		}
+	   </style>
+	</head> 
+<body>  
+	<header class="mui-bar mui-bar-nav">
+		<a href="javascript:history.go(-1);" class="mui-icon mui-icon-undo mui-pull-left"></a>
+		<a href="javascript:go();" class="mui-icon mui-icon-location mui-pull-right"></a>
+	</header>
+	<div class="mui-content">
+	    <ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right daohang" src="../images/daohang.png" alt="22.802079,114.156517">
+					<img class="mui-media-object mui-pull-right tel" src="../images/tel.png" alt="0769-87326626">
+					<div class="mui-media-body">
+						<span>旗舰店湘中阁</span>
+						<p class='mui-ellipsis'>清溪镇三中工业区红棉广场旁（台联厂对面）</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right daohang" src="../images/daohang.png" alt="22.701379,114.175901">
+					<img class="mui-media-object mui-pull-right tel" src="../images/tel.png" alt="0769-82619703">
+					<div class="mui-media-body">
+						<span>京州店湘中阁</span>
+						<p class='mui-ellipsis'>凤岗镇镇田中路京州酒店一楼（雁田小学对面）</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right daohang" src="../images/daohang.png" alt="22.82692,114.104437">
+					<img class="mui-media-object mui-pull-right tel" src="../images/tel.png" alt="0769-82129805">
+					<div class="mui-media-body">
+						<span>花园店湘中阁</span>
+						<p class='mui-ellipsis'>东莞市塘厦镇花园街</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right daohang" src="../images/daohang.png" alt="22.810198,114.100847">
+					<img class="mui-media-object mui-pull-right tel" src="../images/tel.png" alt="0769-82620898">
+					<div class="mui-media-body">
+						<span>塘龙店湘中阁</span>
+						<p class='mui-ellipsis'>东莞市塘厦镇塘龙东路69号美华中心二楼</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right daohang" src="../images/daohang.png" alt="22.846398,114.159537">
+					<img class="mui-media-object mui-pull-right tel" src="../images/tel.png" alt="0769-87362313">
+					<div class="mui-media-body">
+						<span>天和店湘中阁</span>
+						<p class='mui-ellipsis'>清溪镇香芒西路南二街68号（天和百货）</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right daohang" src="../images/daohang.png" alt="22.762221,114.156523">
+					<img class="mui-media-object mui-pull-right tel" src="../images/tel.png" alt="0769-89309088">
+					<div class="mui-media-body">
+						<span>碗宴湘中阁</span>
+						<p class='mui-ellipsis'>碗宴湘中阁</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right daohang" src="../images/daohang.png" alt="28.135394,113.127876">
+					<img class="mui-media-object mui-pull-right tel" src="../images/tel.png" alt="0731-86792666">
+					<div class="mui-media-body">
+						<span>长沙店湘中阁</span>
+						<p class='mui-ellipsis'>长沙市黄兴镇黄江大道旁（实泰物流对面）</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<script src="http://api.map.baidu.com/api?v=1.3" type="text/javascript"></script>
+	<script>
+		var longitude; //经度
+		var latitude; //纬度
+		function getLocation(){
+               var options={
+                   enableHighAccuracy:true, 
+                   maximumAge:1000
+               }
+               if(navigator.geolocation){
+                   //浏览器支持geolocation
+                   navigator.geolocation.getCurrentPosition(onSuccess,onError,options);
+                   
+               }else{
+                   //浏览器不支持geolocation
+               }
+           }
+        //成功时
+        function onSuccess(position){
+           //返回用户位置
+           //纬度
+           longitude =position.coords.longitude;
+           //经度
+           latitude = position.coords.latitude;
+           //使用百度地图API
+        }
+        //失败时
+       	function onError(error){
+           switch(error.code){
+               case 1:
+               alert("位置服务被拒绝");
+               break;
+
+               case 2:
+               alert("暂时获取不到位置信息");
+               break;
+
+               case 3:
+               alert("获取信息超时");
+               break;
+
+               case 4:
+                alert("未知错误");
+               break;
+           }
+
+        }
+        window.onload=getLocation;
+	           
+	    //定位到当前位置
+	    function go(){
+	    	window.location.href="http://mo.amap.com/?location="+latitude+","+longitude+"(我的位置)&type=3&opt=1&dev=1";
+	    }
+	     //导航      
+		$(".daohang").click(function(){
+			var address = $(this).attr("alt");
+			var name = $(this).parent().find("div").children("span").text();
+			window.location.href="http://mo.amap.com/?from="+latitude+","+longitude+"(我的位置)&to="+address+"("+name+")&type=3&opt=1&dev=1"
+		});
+		
+		//拔号
+		$(".tel").click(function(){
+			var num = $(this).attr("alt");//获取当前分店的电话号码
+			window.location.href="tel:"+num;
+		});
+	</script>
+</body>  
+</html>

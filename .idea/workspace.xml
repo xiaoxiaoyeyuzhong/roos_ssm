@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="roos_ssm:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/ContextConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/SpringmvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/AdminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Dwei.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/FoodType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Gift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/GiftOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Note.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/NotoMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/OrderFo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/PaymentInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Shop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/test/SpringJunitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/Adminmapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/addfoods.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/addgift.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/addshopInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/addtype.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/deliveredGifts.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/foodTypeInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/foodsInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/giftInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/member.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/menu.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/orderContent.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/orderManager.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/orderYiquxiao.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/orderYixiaofei.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/shopInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/undeliveredGifts.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/updatefood.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/updatefoodType.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/updategift.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/updateshopInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userConsumeNote.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userNote.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userNoteBydate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userNoteConten.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userxiaofeiNoteBydate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/zuoweiyuding.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/card.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/chongzhi.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/culture.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/foodlist.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/membercenter.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/mynote.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/ordering.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/password.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/payer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/shoplist.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/shopping.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/success.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/torecharge.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/typelist.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/xiaofei.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/xiugaimima.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/xiugaiyonghuming.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/yixiaofei.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/yiyudingzuowei.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/yizhifu.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shop/exchange.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shop/integralshop.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shop/mygift.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shop/order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/back.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/mod47.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/mui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/password.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/swipe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/mui-icons-extra.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/font/mui.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/about_us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/company.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/zhaopin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/b1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/b2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/backbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/c_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card-ico1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card-ico2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card-ico3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card-ico4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card-ico5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card-ico6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card-ico7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cardbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/company1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/company2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/company3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/company4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/company5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/company6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/culimg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daohang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/ico_tips.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/jifen1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/jifen2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/jifen3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/jifen4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/ninhao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/rmb_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/share_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/share_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/share_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/share_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/sybar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/synav1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/synav2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/synav3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/synav4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/synav5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/synav6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/tablebg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/tel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/tgimgs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/tgtxt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/top-ico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/web_banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/web_banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/web_banner3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/web_icon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/web_icon2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/web_icon3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/web_icon4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/weixin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/zhaopin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/zsbbg-green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/zsbbg-red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/WdatePicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/fastclick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-2.0.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/mui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/swipe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/swipe2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/wap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/doufu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/jiza.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/laziji.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/lengcai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/shucai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/tanzirou.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/tejia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/waguan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/xiangcai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/zhaopai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/zhengcai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/food/zhushi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/gift/diannao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/gift/fengshan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/gift/maojin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/shop/xiangcai.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\mavenrepository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Maven/maven" />
+        <option name="userSettingsFile" value="D:\files\Maven\maven\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2i2ioLTlEtgP663QtOUjtCvw11Z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/files/idea_workplace/spring_Aop_Mvc_Combine",
+    "settings.editor.selected.configurable": "MavenSettings"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\files\idea_workplace\roos_ssm\src\main\java\com\gec\roos\pojo" />
+      <recent name="D:\files\idea_workplace\roos_ssm\src\main\webapp" />
+      <recent name="D:\files\idea_workplace\roos_ssm\src\main\webapp\WEB-INF" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat 服务器.Tomcat 8.5.86">
+    <configuration name="SpringJunitTest.testFindById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="roos_ssm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gec.roos.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.gec.roos.test" />
+      <option name="MAIN_CLASS_NAME" value="com.gec.roos.test.SpringJunitTest" />
+      <option name="METHOD_NAME" value="testFindById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 8.5.86" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.86" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="roos_ssm:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/roos_ssm" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="390561c5-30b1-4ff2-80f6-d2548a677b4a" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52265" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="roos_ssm:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.SpringJunitTest.testFindById" />
+      <item itemvalue="Tomcat 服务器.Tomcat 8.5.86" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SpringJunitTest.testFindById" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="" />
+      <created>1718695248776</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718695248776</updated>
+      <workItem from="1718695250310" duration="3935000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
