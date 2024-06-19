@@ -40,5 +40,10 @@ public class FoodTypeServiceImpl implements FoodTypeService {
         foodTypeMapper.updateFoodTypeInfo(foodType);
     }
 
+    @Override
+    public void deletefoodTypeInfo(int typeid) {
+        foodTypeMapper.deletefoodTypeInfo(typeid);
+    }
+
 
 }

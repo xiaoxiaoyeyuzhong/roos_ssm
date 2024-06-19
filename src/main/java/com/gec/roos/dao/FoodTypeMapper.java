@@ -1,6 +1,7 @@
 package com.gec.roos.dao;
 
 import com.gec.roos.pojo.FoodType;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -26,4 +27,8 @@ public interface FoodTypeMapper {
     //修改菜品类型信息
     @Update("update foodtype set typeName=#{typeName},picurl=#{picurl} where typeid=#{typeid}")
     void updateFoodTypeInfo(FoodType foodType);
+
+    //删除菜品类型
+    @Delete("delete from foodtype where typeid=#{typeid}")
+    void deletefoodTypeInfo(int typeid);
 }

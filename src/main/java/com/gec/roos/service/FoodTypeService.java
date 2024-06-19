@@ -22,4 +22,6 @@ public interface FoodTypeService {
    void updatefoodTypeInfo(FoodType foodType);
 
 
+   //删除菜品类型
+   void deletefoodTypeInfo(int typeid);
 }

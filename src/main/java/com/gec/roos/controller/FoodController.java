@@ -228,7 +228,7 @@ public class FoodController {
         return "back/updatefoodType";
     }
 
-    //修改菜品类型信息
+    //修改菜品分类信息
     @RequestMapping("/updatefoodTypeInfo")
     public String updatefoodTypeInfo(HttpServletRequest request, @RequestParam("file") MultipartFile photo, FoodType foodType){
         String msg = null;
