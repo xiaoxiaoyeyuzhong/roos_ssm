@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gec.roos.dao.FoodMapper">
+    <resultMap type="Food" id="queryfoodAndType">
+        <id property="fid" column="fid"/>
+        <result property="foodPrice" column="foodPrice"/>
+        <result property="foodName" column="foodName"/>
+        <result property="foodVIP" column="foodVIP"/>
+        <result property="integral" column="integral"/>
+        <result property="feature" column="feature"/>
+
+        <association property="ft" javaType="FoodType">
+            <id property="typeid" column="typeid"/>
+            <result property="typeName" column="typeName"/>
+        </association>
+    </resultMap>
+
+    <!--查询所有菜品-->
+    <select id="queryAllfood" resultMap="queryfoodAndType"  parameterType="int" >
+        select * from food f left join foodtype t on f.typeid = t.typeid  limit #{page},15
+    </select>
+    <!-- 获取菜品总行数 -->
+    <select id="selectSumCount" resultType="java.lang.Integer">
+        select count(*) from food
+    </select>
+
+    <select id="selectFoodPage"  resultMap="queryfoodAndType"  >
+        select * from food f left join foodtype t on f.typeid = t.typeid where f.typeid=#{typeid} limit #{start},15
+    </select>
+</mapper>

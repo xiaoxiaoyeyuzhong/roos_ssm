@@ -9,4 +9,7 @@ public interface AdminMapper {
     Admin findById(Integer id);
 
     int insert(Admin admin);
+
+    @Select("select count(id) from admin where userName=#{userName} and pwd = #{pwd}")
+    int adminLogin(Admin admin);
 }

@@ -6,4 +6,6 @@ public interface AdminService {
     Admin findById(Integer id);
 
     int insertBatch(Admin admin);
+
+    int adminLogin(Admin admin);
 }
