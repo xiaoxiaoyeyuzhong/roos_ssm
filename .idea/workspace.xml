@@ -9,13 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="新增菜品分类后端接口，实现菜品分类的全部查询，根据id查询，添加，修改，而删除暂未实现，且controller没有分food和foodType，后面可以试着分开，代码更清晰。">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FoodTypeController.java" afterDir="false" />
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="新增FoodTypeController.java，专门存放菜品类型接口，已经把删除功能加入，其余功能暂未从FoodController.java移入FoodTypeController.java。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FoodController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/FoodTypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/FoodTypeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/FoodTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/FoodTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/FoodTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/FoodTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FoodTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FoodTypeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +203,7 @@
       <workItem from="1718695250310" duration="9446000" />
       <workItem from="1718722942038" duration="647000" />
       <workItem from="1718756971490" duration="11718000" />
-      <workItem from="1718779152267" duration="1202000" />
+      <workItem from="1718779152267" duration="2358000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察">
       <created>1718699524656</created>
@@ -222,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718768354149</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="新增FoodTypeController.java，专门存放菜品类型接口，已经把删除功能加入，其余功能暂未从FoodController.java移入FoodTypeController.java。">
+      <created>1718780665506</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718780665506</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +246,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察" />
     <MESSAGE value="新增菜品分类后端接口，实现菜品分类的全部查询，根据id查询，添加，修改，而删除暂未实现，且controller没有分food和foodType，后面可以试着分开，代码更清晰。" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增菜品分类后端接口，实现菜品分类的全部查询，根据id查询，添加，修改，而删除暂未实现，且controller没有分food和foodType，后面可以试着分开，代码更清晰。" />
+    <MESSAGE value="新增FoodTypeController.java，专门存放菜品类型接口，已经把删除功能加入，其余功能暂未从FoodController.java移入FoodTypeController.java。" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增FoodTypeController.java，专门存放菜品类型接口，已经把删除功能加入，其余功能暂未从FoodController.java移入FoodTypeController.java。" />
   </component>
 </project>
