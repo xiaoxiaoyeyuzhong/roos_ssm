@@ -9,19 +9,21 @@
         <include refid="addOrderFos_sql"></include>
     </insert>
 
+    <sql id="addOrderFos_sql">
+        <if test="list!=null and list.size>0">
+            <foreach collection="list" item="item" separator=",">
+                (#{item.orderid},#{item.fid},#{item.number},now())
+            </foreach>
+        </if>
+    </sql>
+
 <!--    <sql id="addOrderFos_sql">-->
 <!--        <if test="list!=null and list.size>0">-->
-<!--            <foreach collection="list" item="item" separator=",">-->
+<!--            <foreach collection="list" item="item" open="(" close=")" separator=",">-->
 <!--                (#{item.orderid},#{item.fid},#{item.number},now())-->
 <!--            </foreach>-->
 <!--        </if>-->
 <!--    </sql>-->
 
-    <sql id="addOrderFos_sql">
-        <if test="list!=null and list.size>0">
-            <foreach collection="list" item="item" open="(" close=")" separator=",">
-                (#{item.orderid},#{item.fid},#{item.number},now())
-            </foreach>
-        </if>
-    </sql>
+
 </mapper>

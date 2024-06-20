@@ -9,14 +9,11 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>roos_ssm Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -36,28 +33,28 @@
       <artifactId>mybatis</artifactId>
       <version>3.5.1</version>
     </dependency>
-    <!--Spring、Springmvc依赖-->
+    <!--spring、springmvc依赖-->
     <dependency>
-      <groupId>org.Springframework</groupId>
-      <artifactId>Spring-webmvc</artifactId>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
       <version>5.2.18.RELEASE</version>
     </dependency>
     <!--jdbc包(事务管理器在这里)-->
     <dependency>
-      <groupId>org.Springframework</groupId>
-      <artifactId>Spring-orm</artifactId>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
       <version>5.2.18.RELEASE</version>
     </dependency>
     <dependency>
-      <groupId>org.Springframework</groupId>
-      <artifactId>Spring-aspects</artifactId>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
       <version>5.2.18.RELEASE</version>
     </dependency>
     <!--aop包-->
-    <!--mybatis整合Spring包-->
+    <!--mybatis整合spring包-->
     <dependency>
       <groupId>org.mybatis</groupId>
-      <artifactId>mybatis-Spring</artifactId>
+      <artifactId>mybatis-spring</artifactId>
       <version>1.3.1</version>
     </dependency>
     <!--jstl包-->
@@ -79,20 +76,20 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
     </dependency>
-    <!--Spring整合junit-->
+    <!--spring整合junit-->
     <dependency>
-      <groupId>org.Springframework</groupId>
-      <artifactId>Spring-test</artifactId>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
       <version>5.2.18.RELEASE</version>
     </dependency>
-    <!--Springmvc对象转json支持包-->
+    <!--springmvc对象转json支持包-->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.9.8</version>
     </dependency>
 
-    <!--显示 Spring5、mybatis日志 依赖-->
+    <!--显示 spring5、mybatis日志 依赖-->
     <dependency><!-- log4j2的API实现包 -->
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
@@ -147,28 +144,17 @@
       <version>2.4</version>
       <classifier>jdk15</classifier> <!-- 需要指定JDK版本哦：2.4有13,15两个JDK版本 -->
     </dependency>
+    <dependency>
+      <groupId>com.alipay.sdk</groupId>
+      <artifactId>alipay-sdk-java</artifactId>
+      <version>4.34.90.ALL</version>
+    </dependency>
   </dependencies>
 
   <build>
     <finalName>roos_ssm</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
-        <plugin>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>maven-jetty-plugin</artifactId>
-          <version>6.1.7</version>
-          <configuration>
-            <connectors>
-              <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                <port>8888</port>
-                <maxIdleTime>30000</maxIdleTime>
-              </connector>
-            </connectors>
-            <webAppSourceDirectory>${project.build.directory}/${pom.artifactId}-${pom.version}</webAppSourceDirectory>
-            <contextPath>/</contextPath>
-          </configuration>
-        </plugin>
-
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
@@ -200,15 +186,5 @@
         </plugin>
       </plugins>
     </pluginManagement>
-      <plugins>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <configuration>
-                  <source>8</source>
-                  <target>8</target>
-              </configuration>
-          </plugin>
-      </plugins>
   </build>
 </project>

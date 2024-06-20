@@ -80,4 +80,9 @@ public class ContextConfig {
 
     }
 
+    //将AlipayTemplate
+    @Bean
+    public AlipayTemplate getAlipayTemplate(){
+        return  new AlipayTemplate();
+    }
 }

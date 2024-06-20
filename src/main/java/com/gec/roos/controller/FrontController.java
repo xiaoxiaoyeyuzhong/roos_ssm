@@ -1,7 +1,10 @@
 package com.gec.roos.controller;
 
+import com.alipay.api.AlipayApiException;
+import com.gec.roos.config.AlipayTemplate;
 import com.gec.roos.pojo.*;
 import com.gec.roos.service.*;
+import com.gec.roos.vo.PayVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,10 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Controller
 public class FrontController {
@@ -31,6 +37,9 @@ public class FrontController {
 
     @Autowired
     ShopService shopService;
+
+    @Autowired
+    private AlipayTemplate alipayTemplate;
 
     //访问前台首页
     @RequestMapping("/index.html")
@@ -165,4 +174,89 @@ public class FrontController {
         }
         return success;
     }
+
+    //支付宝生成支付页面
+    @RequestMapping(value = "/payOrder")
+    public void alipay(HttpServletResponse response, String eatdate, String openid, int orderid, int shopid) throws AlipayApiException {
+
+        Double payAmount =0D;
+        //1.计算支付金额
+        List<OrderFo> orderFos = orderFoService.queryOrderFosByOrderid(orderid);
+        for (OrderFo odf : orderFos) {
+            BigDecimal unitPrice = new BigDecimal(odf.getFood().getFoodPrice());
+            payAmount+=unitPrice.multiply(new BigDecimal(odf.getNumber())).doubleValue();
+        }
+        //2.补充支付需要参数调用支付宝模板返回响应 字符串
+        PayVo payVo = new PayVo();
+        Date currentDate = new Date();
+        Long outTradeNo = Long.parseLong(new SimpleDateFormat("yyyyMMddHHmmssSSS").format(currentDate)+new Random().nextInt(10));
+        payVo.setOut_trade_no(outTradeNo.toString());
+        payVo.setTotal_amount(payAmount.toString());
+        payVo.setSubject("湘中阁在线点餐付款");
+        payVo.setBody("湘中阁在线点餐付款");
+        //用于拼接回调请求参数
+        String args ="?eatdate="+eatdate+"&openid="+openid+"&orderid="+orderid+"&shopid="+shopid;
+        //请求支付宝生成 支付页面 字符串
+        String result = alipayTemplate.pay(payVo, args);
+        //由于生成内容为 支付页面的html字符串 需要让页面直接响应成HTML内容
+        PrintWriter pw =null;
+        //设置响应头 响应内容为 HTML文本内容
+        response.setHeader("Content-Type","text/html;charset=UTF-8");
+        try {
+            pw = response.getWriter();
+            pw.write(result);
+            pw.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            pw.close();
+        }
+
+
+    }
+
+    //支付成功后更改订单状态
+    @RequestMapping("/paymentSuccessed")
+    public String paymentSuccessed(String eatdate, String openid, int orderid, int shopid,PayVo payVo){
+        //1.执行支付成功业务
+        orderService.paymentSuccessed(eatdate,openid,orderid,shopid,payVo);
+        //2.重定向到我的订单请求
+        return "redirect:queryMyOrder?openid="+openid;
+    }
+
+    //查询看已支付且未消费的订单详情信息
+        @RequestMapping("/queryPaidOrderDetail")
+    public String queryPaidOrderDetail(HttpServletRequest request, String openid){
+        String msg = null;
+        // 获取所有的菜品分类名称
+        List<FoodType> ftlist = foodTypeService.queryAllfoodType();
+        //查询出已支付且未消费的订单信息
+        List<Order> orders = orderService.queryPaidOrderDetail(openid);
+        if(orders.size()==0){
+            msg = "0";
+        }
+        request.setAttribute("orders", orders);
+        request.setAttribute("msg", msg);
+        request.setAttribute("openid", openid);
+        request.setAttribute("ftlist", ftlist);
+        return "front/yizhifu";
+    }
+
+    //取消已支付未消费订单
+    @RequestMapping("/cancelPaidOrders")
+    @ResponseBody
+    public String cancelPaidOrders(int orderid){
+        String success =null;
+        //调用取消订单页面
+        try {
+            orderService.cancelPaidOrders(orderid);
+            success = "1";
+        }catch (Exception e){
+            e.printStackTrace();
+            success = "0";
+        }
+        return success;
+    }
+
 }

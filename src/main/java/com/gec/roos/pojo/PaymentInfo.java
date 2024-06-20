@@ -91,4 +91,18 @@ public class PaymentInfo {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "PaymentInfo{" +
+                "paymentid=" + paymentid +
+                ", orderid=" + orderid +
+                ", outTradeNo='" + outTradeNo + '\'' +
+                ", tradeNo='" + tradeNo + '\'' +
+                ", totalAmount=" + totalAmount +
+                ", payStatus='" + payStatus + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

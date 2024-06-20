@@ -42,4 +42,6 @@ public class Shop {
 	public void setImgurl(String imgurl) {
 		this.imgurl = imgurl;
 	}
+
+
 }
