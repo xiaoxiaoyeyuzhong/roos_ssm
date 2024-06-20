@@ -25,6 +25,6 @@ public interface FoodService {
     //根据分类分页查询菜品
     List<Food> selectFoodPage(int typeid, int start);
 
-    //查询该菜品分类下的所有菜品
+    //查询该菜品分类下的菜品总行数
     int selectSumCountBytypeId(int typeid);
 }

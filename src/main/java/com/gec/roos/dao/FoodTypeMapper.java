@@ -31,4 +31,7 @@ public interface FoodTypeMapper {
     //删除菜品类型
     @Delete("delete from foodtype where typeid=#{typeid}")
     void deletefoodTypeInfo(int typeid);
+
+    //根据菜品类型id查询类型下的菜品
+    FoodType queryListByfoodTypeId(int typeid);
 }

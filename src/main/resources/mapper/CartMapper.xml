@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.roos.dao.CartMapper">
+
+    <select id="queryAllCart" parameterType="string" resultMap="cardResultMap">
+        select c.*,f.foodName ,f.foodPrice,f.picurl
+        from cart c JOIN food f ON c.fid = f.fid where openid = #{openid}
+    </select>
+    <resultMap type="Cart" id="cardResultMap">
+        <id property="id" column="id"/>
+        <result property="fid" column="fid"/>
+        <result property="create_time" column="create_time" />
+        <association property="food" javaType="Food" column="fid">
+            <result property="foodName" column="foodName"/>
+            <result property="foodPrice" column="foodPrice"/>
+            <result property="picurl" column="picurl"/>
+        </association>
+    </resultMap>
+</mapper>

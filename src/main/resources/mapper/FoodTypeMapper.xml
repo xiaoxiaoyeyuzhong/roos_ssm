@@ -4,7 +4,26 @@
 
 <mapper namespace="com.gec.roos.dao.FoodTypeMapper">
 
+<!--    查询所有的菜品类型-->
     <select id="selectTypeSumCount" resultType="java.lang.Integer">
         select count(*) from foodtype
+    </select>
+
+    <resultMap type="FoodType" id="queryFoodTypeResultMap">
+        <id property="typeid" column="typeid" />
+        <result property="typeName" column="typeName" />
+        <collection property="foods" ofType="Food" >
+            <id property="fid" column="fid"/>
+            <result property="foodName" column="foodName"/>
+            <result property="foodPrice" column="foodPrice"/>
+            <result property="foodVIP" column="foodVIP"/>
+            <result property="integral" column="integral"/>
+            <result property="picurl" column="picurl"/>
+            <result property="feature" column="feature"/>
+        </collection>
+    </resultMap>
+<!--    根据菜品类型id查询类型下的菜品-->
+    <select id="queryListByfoodTypeId" parameterType="int" resultMap="queryFoodTypeResultMap">
+        select t.typeid,t.typeName,f.* from foodtype t JOIN food f ON(t.typeid = f.typeid)  where  t.typeid = #{typeid}
     </select>
 </mapper>

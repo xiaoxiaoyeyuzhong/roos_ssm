@@ -24,4 +24,9 @@ public interface FoodTypeService {
 
    //删除菜品类型
    void deletefoodTypeInfo(int typeid);
+
+
+   //根据菜品类型id查询类型下的菜品
+   FoodType queryListByfoodTypeId(int typeid);
+
 }
