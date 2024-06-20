@@ -1,7 +1,7 @@
 package com.gec.roos.pojo;
 /**
  * 收货地址实体
- * @author hping
+ * @author fdt
  *
  */
 public class Address {

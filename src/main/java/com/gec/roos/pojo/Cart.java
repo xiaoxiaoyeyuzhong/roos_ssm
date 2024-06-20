@@ -1,7 +1,7 @@
 package com.gec.roos.pojo;
 /**
  * 购物车
- * @author hping
+ * @author fdt
  *
  */
 public class Cart {

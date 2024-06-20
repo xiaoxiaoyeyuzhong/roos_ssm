@@ -11,12 +11,12 @@ import java.util.List;
 public interface OrderFoMapper {
 
     //批量创建订单项
-    @Insert("<script>insert into orderfo (orderid,fid,number,create_time) " +
-            "values" +
-            "<foreach collection='list' item='item' separator=','>" +
-            "(#{item.orderid},#{item.fid},#{item.number},now())"+
-            "</foreach>"+
-            "</script>")
+//    @Insert("<script>insert into orderfo (orderid,fid,number,create_time) " +
+//            "values" +
+//            "<foreach collection='list' item='item' separator=','>" +
+//            "(#{item.orderid},#{item.fid},#{item.number},now())"+
+//            "</foreach>"+
+//            "</script>")
     void addOrderFos(List<OrderFo> odf);
 
 
