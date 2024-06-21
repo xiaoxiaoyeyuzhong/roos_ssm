@@ -28,5 +28,17 @@ public interface OrderMapper {
 
     @Update("update orders set state=\"已取消\" where orderid=#{orderid}")
     void cancelPaymentAtTheStore(int orderid);
+
+
+    @Select("select count(orderid) from orders  where isexpend=#{isexpend} and !ISNULL(isexpend) and !ISNULL(payment) and !ISNULL(eatdate)")
+    int getCountByIsexpend(String isexpend);
+
+
+    //根据isexpend查询第一页10条订单集合方法
+    List<Order> queryOrdersByIsexpendAndPage(@Param("start") int start,@Param("isexpend") String isexpend);
+
+    //修改订单为已消费 已支付
+    @Update("update orders set isexpend = \"已消费\",state=\"已支付\" , create_time=now() where orderid = #{orderid}")
+    void updateOrderState(int orderid);
 }
 

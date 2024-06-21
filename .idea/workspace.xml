@@ -9,22 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="将OrderFoMapper.java中的addOrderFos方法替换为xml方式注入sql，发现open=&quot;(&quot; close=&quot;)&quot;在这里不应加入，否则会让insert变成插入一条数据，五个值插入到4个字段里（测试时数据库当前订单五个菜品，所以五个值）。">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/AlipayTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/PaymentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/vo/PayVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="点餐支付功能完成，且已支付但是未消费的订单退款已实现，在AlipayTemplate.java中添加了（+ &quot;\&quot;refund_amount\&quot;:\&quot;&quot;+ paymentInfo.getTotalAmount() +&quot;\&quot;,&quot; // 设置退款金额）括号中的内容，因为不设置退款金额，就退不了款。">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/DweiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/DweiMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/DweiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/DweiServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/ContextConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/ContextConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FrontController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FrontController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/OrderFoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/OrderFoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/PaymentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/PaymentInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/OrderFoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/OrderFoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/OrderFoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/OrderFoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderFoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderFoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -75,6 +78,9 @@
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/files/idea_workplace/roos_ssm",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.47356322",
     "settings.editor.selected.configurable": "MavenSettings",
     "spring.configuration.checksum": "046a4fc407a2738eca18d5a309ed14d2"
   },
@@ -85,6 +91,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gec.roos.dao" />
+      <recent name="com.gec.roos.service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\files\idea_workplace\roos_ssm" />
       <recent name="D:\files\idea_workplace\roos_ssm\src\main\java\com\gec\roos\pojo" />
@@ -223,7 +233,11 @@
       <workItem from="1718842803550" duration="3110000" />
       <workItem from="1718846689744" duration="7114000" />
       <workItem from="1718866036119" duration="1002000" />
-      <workItem from="1718867066567" duration="9174000" />
+      <workItem from="1718867066567" duration="9509000" />
+      <workItem from="1718885973908" duration="104000" />
+      <workItem from="1718886892216" duration="46000" />
+      <workItem from="1718894242370" duration="33000" />
+      <workItem from="1718929333135" duration="9333000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察">
       <created>1718699524656</created>
@@ -267,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718866492698</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="点餐支付功能完成，且已支付但是未消费的订单退款已实现，在AlipayTemplate.java中添加了（+ &quot;\&quot;refund_amount\&quot;:\&quot;&quot;+ paymentInfo.getTotalAmount() +&quot;\&quot;,&quot; // 设置退款金额）括号中的内容，因为不设置退款金额，就退不了款。">
+      <created>1718876508400</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718876508400</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +312,7 @@
     <MESSAGE value="已经把菜品分类的接口放入FoodTypeController.java。" />
     <MESSAGE value="前台在线点餐功能实现，支付方式为到店付，设置到店付后删除未支付的该用户的订单。" />
     <MESSAGE value="将OrderFoMapper.java中的addOrderFos方法替换为xml方式注入sql，发现open=&quot;(&quot; close=&quot;)&quot;在这里不应加入，否则会让insert变成插入一条数据，五个值插入到4个字段里（测试时数据库当前订单五个菜品，所以五个值）。" />
-    <option name="LAST_COMMIT_MESSAGE" value="将OrderFoMapper.java中的addOrderFos方法替换为xml方式注入sql，发现open=&quot;(&quot; close=&quot;)&quot;在这里不应加入，否则会让insert变成插入一条数据，五个值插入到4个字段里（测试时数据库当前订单五个菜品，所以五个值）。" />
+    <MESSAGE value="点餐支付功能完成，且已支付但是未消费的订单退款已实现，在AlipayTemplate.java中添加了（+ &quot;\&quot;refund_amount\&quot;:\&quot;&quot;+ paymentInfo.getTotalAmount() +&quot;\&quot;,&quot; // 设置退款金额）括号中的内容，因为不设置退款金额，就退不了款。" />
+    <option name="LAST_COMMIT_MESSAGE" value="点餐支付功能完成，且已支付但是未消费的订单退款已实现，在AlipayTemplate.java中添加了（+ &quot;\&quot;refund_amount\&quot;:\&quot;&quot;+ paymentInfo.getTotalAmount() +&quot;\&quot;,&quot; // 设置退款金额）括号中的内容，因为不设置退款金额，就退不了款。" />
   </component>
 </project>

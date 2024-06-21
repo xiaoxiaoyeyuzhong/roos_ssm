@@ -41,6 +41,12 @@ public class FrontController {
     @Autowired
     private AlipayTemplate alipayTemplate;
 
+    @Autowired
+    private DweiService dweiService;
+
+    @Autowired
+    private UserService userService;
+
     //访问前台首页
     @RequestMapping("/index.html")
     public String openIndex(Model model, String code){
@@ -254,6 +260,79 @@ public class FrontController {
             success = "1";
         }catch (Exception e){
             e.printStackTrace();
+            success = "0";
+        }
+        return success;
+    }
+
+    //进入预定餐桌页面
+    @RequestMapping("/opendingcan")
+    public String opendingcan(Model model, String openid) {
+        model.addAttribute("openid", openid);
+        return "front/order";
+    }
+
+    //保存客户预定桌位信息
+    @RequestMapping("/saveDweiInfo")
+    public String saveDweiInfo(Model model, String openid, Dwei dwei) {
+        String msg = null;
+        dwei.setOpenid(openid);
+        try {
+            //客户定位保存
+            dweiService.addDweiInfo(dwei);
+            msg = "1";
+        } catch (Exception e) {
+            msg = "0";
+        }
+        model.addAttribute("openid", openid);
+        model.addAttribute("msg", msg);
+        return "front/order";
+    }
+
+    //查看已预定的桌位详情信息
+    @RequestMapping("/queryDweiDetail")
+    public String queryDweiDetail(Model model, String openid){
+        String msg = null;
+        // 获取所有的菜品分类名称
+        List<FoodType> ftlist = foodTypeService.queryAllfoodType();
+        //查询出已支付且未消费的订单信息
+        List<Dwei> dweis = dweiService.queryDweiDetail(openid);
+        if(dweis.size()==0){
+            msg = "0";
+        }
+        model.addAttribute("dweis", dweis);
+        model.addAttribute("msg", msg);
+        model.addAttribute("openid", openid);
+        model.addAttribute("ftlist", ftlist);
+        return "front/yiyudingzuowei";
+    }
+
+    //查看我的订单
+    @RequestMapping("/queryMyOrder")
+    public String queryMyOrder(HttpServletRequest request,String openid){
+        //1.获取所有的菜品分类名称
+        List<FoodType> ftlist = foodTypeService.queryAllfoodType();
+
+        //2.删除提交的，但未确定下单的订单
+        orderService.deleteOrderISNULL();
+        //3.获取用户名信息
+        User user = userService.queryUser(openid);
+
+        request.setAttribute("user", user);
+        request.setAttribute("openid", openid);
+        request.setAttribute("ftlist", ftlist);
+        return "front/membercenter";
+    }
+
+    //用户取消桌位订单
+    @RequestMapping("/changeYudingState")
+    @ResponseBody
+    public String changeYudingState(int id){
+        String success = null;
+        try {
+            dweiService.changeDweiState(id);
+            success = "1";
+        } catch (Exception e) {
             success = "0";
         }
         return success;

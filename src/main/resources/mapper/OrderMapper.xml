@@ -3,19 +3,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.gec.roos.dao.OrderMapper">
-    <!-- 查询已支付未消费订单 -->
-    <select id="queryPaidOrderDetail" parameterType="string" resultMap="orderResultMap">
-        select o.orderid, o.openid, o.state, o.payment, o.isexpend, o.eatdate, o.create_time as o_create_time,
-               d.id, d.orderid as d_orderid, d.number, d.fid, d.create_time as d_create_time,
-               f.fid as f_fid, f.typeid, f.foodName, f.picurl, f.foodPrice, f.foodVIP, f.integral, f.feature, f.create_time as f_create_time
-        from orders o
-                 JOIN orderfo d ON(o.orderid = d.orderid)
-                 JOIN food f ON(d.fid = f.fid)
-        where o.openid=#{openid}
-          and o.payment='支付宝支付'
-          and o.isexpend='未消费'
-        order by o.create_time desc
-    </select>
 
     <resultMap type="Order" id="orderResultMap">
         <id property="orderid" column="orderid"/>
@@ -32,7 +19,7 @@
             <result property="fid" column="fid"/>
             <result property="create_time" column="d_create_time"/>
             <result property="sum_money" column="sum_money"/>
-                <association property="food" javaType="Food">
+            <association property="food" javaType="Food">
                 <id property="fid" column="f_fid"/>
                 <result property="typeid" column="typeid"/>
                 <result property="foodName" column="foodName"/>
@@ -45,4 +32,42 @@
             </association>
         </collection>
     </resultMap>
+
+    <!-- 查询已支付未消费订单 -->
+    <select id="queryPaidOrderDetail" parameterType="string" resultMap="orderResultMap">
+        select o.orderid, o.openid, o.state, o.payment, o.isexpend, o.eatdate, o.create_time as o_create_time,
+               d.id, d.orderid as d_orderid, d.number, d.fid, d.create_time as d_create_time,
+               f.fid as f_fid, f.typeid, f.foodName, f.picurl, f.foodPrice, f.foodVIP, f.integral, f.feature, f.create_time as f_create_time
+        from orders o
+                 JOIN orderfo d ON(o.orderid = d.orderid)
+                 JOIN food f ON(d.fid = f.fid)
+        where o.openid=#{openid}
+          and o.payment='支付宝支付'
+          and o.isexpend='未消费'
+        order by o.create_time desc
+    </select>
+
+
+
+    <!-- 配置order 与shop结果集映射-->
+    <resultMap type="Order" id="ordersByIsexpendResultMap">
+        <id property="orderid" column="orderid"/>
+        <result property="openid" column="openid"/>
+        <result property="state" column="state"/>
+        <result property="isexpend" column="isexpend"/>
+        <result property="payment" column="payment"/>
+        <result property="eatdate" column="eatdate"/>
+        <result property="create_time" column="create_time"/>
+
+        <association property="shop" javaType="Shop" column="id">
+            <id property="id" column="id"/>
+            <result property="shopName" column="shopName"/>
+        </association>
+    </resultMap>
+    <!--根据isexpend查询第一页10条订单集合方法-->
+    <select id="queryOrdersByIsexpendAndPage" resultMap="ordersByIsexpendResultMap">
+        select * from orders o JOIN shop s ON(o.shopid=s.id)
+        where isexpend=#{isexpend} and !ISNULL(isexpend) and !ISNULL(payment) and !ISNULL(eatdate)
+        ORDER BY create_time DESC limit #{start},10
+    </select>
 </mapper>

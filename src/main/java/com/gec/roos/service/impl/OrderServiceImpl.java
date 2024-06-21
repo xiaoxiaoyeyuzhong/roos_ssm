@@ -4,15 +4,20 @@ import com.gec.roos.config.AlipayTemplate;
 import com.gec.roos.dao.OrderFoMapper;
 import com.gec.roos.dao.OrderMapper;
 import com.gec.roos.dao.PaymentMapper;
+import com.gec.roos.dao.UserMapper;
 import com.gec.roos.pojo.Order;
+import com.gec.roos.pojo.OrderFo;
 import com.gec.roos.pojo.PaymentInfo;
+import com.gec.roos.pojo.User;
 import com.gec.roos.service.OrderService;
 import com.gec.roos.vo.PayVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -29,6 +34,9 @@ public class OrderServiceImpl  implements OrderService {
 
     @Autowired
     private AlipayTemplate alipayTemplate;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public int newOrder(Order order) {
@@ -84,6 +92,66 @@ public class OrderServiceImpl  implements OrderService {
         }else{
             throw new RuntimeException("退款失败");
         }
+    }
+
+    @Override
+    public void deleteOrderISNULL() {
+        orderMapper.deleteOrderISNULL();
+    }
+
+    @Override
+    public Map<String, Object> queryOrdersByIsexpend(int page, String isexpend) {
+        //1.根据Isexpend查询订单总记录数
+        int count = orderMapper.getCountByIsexpend(isexpend);
+        //1.1 计算未消费订单总页数 每页显示10条
+        int countPage = count%10==0? count/10:count/10+1;
+
+        //查询起始页码
+        int start  = (page-1)*10;
+        //2.根据isexpend查询第一页10条订单集合
+        List<Order> orders = orderMapper.queryOrdersByIsexpendAndPage(start,isexpend);
+        String msg =orders.size()+"";
+        //3.返回数据封装
+        Map<String,Object> map = new HashMap<>();
+        map.put("msg",msg);
+        map.put("countPage",countPage);
+        map.put("orders",orders);
+        return map;
+    }
+
+    @Override
+    public List<Order> queryOrdersTurnPagesByIsexpend(int page, String isexpend) {
+        int start = (page-1)*10;
+        //使用之前编写好的dao方法
+        return orderMapper.queryOrdersByIsexpendAndPage(start,isexpend);
+    }
+
+    @Override
+    public String OKOrderState(int orderid, String openid) {
+        String success = null;
+
+        try {
+            //1.修改订单状态 改为已支付 已消费
+            orderMapper.updateOrderState(orderid);
+            //2.查询用户信息 获取用户积分
+            User user = userMapper.queryUser(openid);
+            //2.1 判断该用户是否注册会员
+            if(user!=null) {
+                //3.已注册会员查询 该订单所有订单项积分
+                List<OrderFo> orderFos = orderFoMapper.queryOrderFosByOrderid(orderid);
+                int sum =0;
+                for (OrderFo of : orderFos) {
+                    sum += of.getNumber() * of.getFood().getFoodPrice();
+                }
+                //4.修改该会员积分
+                userMapper.updateUserIntegral(sum,user.getId());
+            }
+            success = "1";
+        } catch (Exception e) {
+            e.printStackTrace();
+            success = "0";
+        }
+        return success;
     }
 }
 

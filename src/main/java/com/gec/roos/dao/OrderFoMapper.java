@@ -1,10 +1,7 @@
 package com.gec.roos.dao;
 
 import com.gec.roos.pojo.OrderFo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -32,4 +29,21 @@ public interface OrderFoMapper {
             @Result(column = "foodPrice",property = "food.foodPrice")
     })
     List<OrderFo> queryOrderFosByOrderid(int orderid);
+
+    //查询订单项记录数
+    @Select("select count(id) from orderfo where orderid = #{orderid}")
+    int queryOrderFoCount(int orderid);
+
+    //查询当前页订单项数据集合
+    @Select("SELECT * FROM orderfo d "+
+            "LEFT JOIN food f ON(f.fid = d.fid) "+
+            "WHERE  d.orderid=#{orderid} limit #{start},5")
+    @Results({
+            @Result(column = "orderid",property = "orderid"),
+            @Result(column = "number",property = "number"),
+            @Result(column = "foodName",property = "food.foodName"),
+            @Result(column = "picurl",property = "food.picurl"),
+            @Result(column = "foodPrice",property = "food.foodPrice")
+    })
+    List<OrderFo> queryOrderFosByOrderidAndPage(@Param("orderid") int orderid, @Param("start") int start);
 }
