@@ -9,18 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.会员注册充值功能完成，&#10;2。记得如果string有小数点，直接转int是不行的，需要先转double，再转int。">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/NoteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/NoteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/NoteServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/NoteMapper.xml" afterDir="false" />
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.后台会员管理功能实现&#10;2.编写分页查询的时候，记得看start的值，是(page-1)/?，问号代表每页要展示的条数，因为我们是从第0个开始展示的，所以第一页起始位置是(1-1)/5">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/IntegralShopConttroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/AddressMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/GiftMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/AddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/AddressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/gift/tianxuandiannao.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/NoteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/NoteMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userNote.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userNote.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +233,8 @@
       <workItem from="1718894242370" duration="33000" />
       <workItem from="1718929333135" duration="12319000" />
       <workItem from="1718946465993" duration="3903000" />
-      <workItem from="1718951931555" duration="8066000" />
+      <workItem from="1718951931555" duration="11338000" />
+      <workItem from="1718966629606" duration="1752000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察">
       <created>1718699524656</created>
@@ -298,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718955469567</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1.后台会员管理功能实现&#10;2.编写分页查询的时候，记得看start的值，是(page-1)/?，问号代表每页要展示的条数，因为我们是从第0个开始展示的，所以第一页起始位置是(1-1)/5">
+      <created>1718960890181</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718960890181</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +333,7 @@
     <MESSAGE value="点餐支付功能完成，且已支付但是未消费的订单退款已实现，在AlipayTemplate.java中添加了（+ &quot;\&quot;refund_amount\&quot;:\&quot;&quot;+ paymentInfo.getTotalAmount() +&quot;\&quot;,&quot; // 设置退款金额）括号中的内容，因为不设置退款金额，就退不了款。" />
     <MESSAGE value="1.餐位预订及消费功能完成&#10;2.显示会员界面完成" />
     <MESSAGE value="1.会员注册充值功能完成，&#10;2。记得如果string有小数点，直接转int是不行的，需要先转double，再转int。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.会员注册充值功能完成，&#10;2。记得如果string有小数点，直接转int是不行的，需要先转double，再转int。" />
+    <MESSAGE value="1.后台会员管理功能实现&#10;2.编写分页查询的时候，记得看start的值，是(page-1)/?，问号代表每页要展示的条数，因为我们是从第0个开始展示的，所以第一页起始位置是(1-1)/5" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.后台会员管理功能实现&#10;2.编写分页查询的时候，记得看start的值，是(page-1)/?，问号代表每页要展示的条数，因为我们是从第0个开始展示的，所以第一页起始位置是(1-1)/5" />
   </component>
 </project>
