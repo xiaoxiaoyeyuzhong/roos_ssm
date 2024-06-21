@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 public interface  UserMapper {
 
     @Select("select * from user where openid=#{openid}")
@@ -32,4 +34,20 @@ public interface  UserMapper {
     //修改会员余额
     @Update("update user set amount=amount+#{amount} where openid=#{openid}")
     void updateUserAmonut(@Param("amount")int amount,@Param("openid")String openid);
+
+    //条件查询总条数
+    @Select("<script>"
+            +"SELECT count(id) FROM user"
+            +"<where > <if test=\"phone!=null&amp;phone!=''\"> phone=#{phone}</if></where>"
+            +"</script>")
+    int getCountByPhone(@Param("phone") String phone);
+    @Select("<script>"
+            + "select * from user"
+            +"<where ><if test=\"phone!=null&amp;phone!=''\">phone=#{phone}</if></where>"
+            +"limit #{start},5"
+            +"</script>")
+    List<User> queryMemberByPageAndPhone(@Param("start") int start, @Param("phone") String phone);
+
+    @Select("select * from user limit #{start},5")
+    List<User> queryMemberByPage(int start);
 }

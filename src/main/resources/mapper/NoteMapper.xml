@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.roos.dao.NoteMapper">
+
+
+    <select id="getRechargeCountByTime" resultType="java.lang.Integer">
+        select count(n_id) from note
+        <where>
+            recordBill like '+%'
+            <if test="startDate!=null&amp;startDate!=''">
+                and	createTime like CONCAT(#{startDate},'%')
+            </if>
+        </where>
+    </select>
+    <!-- note与user关联 -->
+    <resultMap type="Note" id="noteMap">
+        <id property="id" column="n_id" />
+        <result property="openid" column="openid"/>
+        <result property="recordBill" column="recordBill" />
+        <result property="createTime" column="createTime" />
+        <association property="user" javaType="User">
+            <id property="id" column="id" />
+            <result property="userName" column="userName" />
+            <result property="phone" column="phone" />
+            <result property="amount" column="amount" />
+        </association>
+    </resultMap>
+    <!--根据时间查询充值记录信息-->
+    <select id="queryRechargeNotesByTime" resultMap="noteMap" >
+        select n.n_id,n.openid,n.recordBill,n.createTime,u.id,u.userName,u.phone,u.amount
+        from note n left join user u ON (n.openid = u.openid)
+        <where>
+            n.recordBill like '+%'
+            <if test="startDate!=null&amp;startDate!=''">
+                and	n.createTime like CONCAT(#{startDate},'%')
+            </if>
+            order by n.createTime desc limit #{start},5
+        </where>
+
+
+    </select>
+    <!--根据时间查询 recordBill 充值集合-->
+    <select id="queryAllRechargeNotesByTime" resultType="java.lang.String">
+        select recordBill from note
+        <where>
+            recordBill like '+%'
+            <if test="startDate!=null&amp;startDate!=''">
+                and createTime like CONCAT(#{startDate},'%')
+            </if>
+        </where>
+
+    </select>
+</mapper>

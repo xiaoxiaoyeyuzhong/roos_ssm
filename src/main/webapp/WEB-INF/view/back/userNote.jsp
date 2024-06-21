@@ -117,64 +117,59 @@
 			var startDate = "${startDate}";
 			//异步分页
 			//上一页
-			function pre(){
-				var page = $("#num").text();
-				if(msg=="0"||page==1){
+			function pre() {
+				var page = parseInt($("#num").text());
+				if (msg == "0" || page == 1) {
 					return;
-				}else{
-					$("#num").text(page-1);
+				} else {
+					$("#num").text(page - 1);
 					page = $("#num").text();
-					$.post("queryRechargeByPage",{page:page,startDate:startDate},function(data){
-						var str;
-						$(".sa").remove();
-						var j = (page-1)*1;
-						for(var i=0;i<data.length;i++){
-							var str =str+"<tr class='sa'>"
-											+"<td>"+(j+i+1)+"</td>"
-											+"<td>"+data[i].user.userName+"</td>"
-											+"<td>"+data[i].user.id+"</td>"
-											+"<td>"+data[i].user.phone+"</td>"
-											+"<td style='color:red;'>"+data[i].recordBill+"</td>"
-											+"<td>"+data[i].createTime+"</td>"
-											+"<td style='color:red;'>"+data[i].user.amount+"</td>"
-											+"<td>"
-												+"<a href='queryUserNoteByPage?openid="+data[i].openid+"&page=1'>账单详情</a>"
-											+"</td>"
-										+"</tr>";
+					$.post("queryRechargeByPage", { page: page, startDate: startDate }, function (data) {
+						var str = ""; // 将str的定义移到循环外
+						var j = (page - 1) * 5; // 每次显示5条
+						for (var i = 0; i < data.length; i++) {
+							str += "<tr class='sa'>" + // 使用+=进行字符串拼接
+									"<td>" + (j + i + 1) + "</td>" +
+									"<td>" + data[i].user.userName + "</td>" +
+									"<td>" + data[i].user.id + "</td>" +
+									"<td>" + data[i].user.phone + "</td>" +
+									"<td style='color:red;'>" + data[i].recordBill + "元</td>" +
+									"<td>" + data[i].createTime + "</td>" +
+									"<td style='color:red;'>" + data[i].user.amount + "元</td>" +
+									"<td><a href='queryUserNoteByPage?openid=" + data[i].openid + "&page=1'>账单详情</a></td>" +
+									"</tr>";
 						}
-						$(".table tr:eq(0)").after(str);
-					})
+						$(".sa").remove(); // 移除旧的数据行
+						$(".table tr:eq(0)").after(str); // 插入新的数据行
+					});
 				}
 			}
 			//下一页
-			function next(){
-				var page =parseInt($("#num").text());
-				if(msg=="0"||page=="${countPage}"){
+			function next() {
+				var page = parseInt($("#num").text());
+				if (msg == "0" || page == "${countPage}") {
 					return;
-				}else{
-					$("#num").text(page+1);
+				} else {
+					$("#num").text(page + 1);
 					page = $("#num").text();
-					$.post("queryRechargeByPage",{page:page,startDate:startDate},function(data){
-						var str;
-						$(".sa").remove();
-						var j = (page-1)*1;
-						for(var i=0;i<data.length;i++){
-							var str =str+"<tr class='sa'>"
-											+"<td>"+(j+i+1)+"</td>"
-											+"<td>"+data[i].user.userName+"</td>"
-											+"<td>"+data[i].user.id+"</td>"
-											+"<td>"+data[i].user.phone+"</td>"
-											+"<td style='color:red;'>"+data[i].recordBill+"</td>"
-											+"<td>"+data[i].createTime+"</td>"
-											+"<td style='color:red;'>"+data[i].user.amount+"</td>"
-											+"<td>"
-												+"<a href='queryUserNoteByPage?openid="+data[i].openid+"&page=1'>账单详情</a>"
-											+"</td>"
-										+"</tr>";
+					$.post("queryRechargeByPage", { page: page, startDate: startDate }, function (data) {
+						var str = ""; // 将str的定义移到循环外
+						var j = (page - 1) * 5; // 每次显示5条
+						for (var i = 0; i < data.length; i++) {
+							str += "<tr class='sa'>" + // 使用+=进行字符串拼接
+									"<td>" + (j + i + 1) + "</td>" +
+									"<td>" + data[i].user.userName + "</td>" +
+									"<td>" + data[i].user.id + "</td>" +
+									"<td>" + data[i].user.phone + "</td>" +
+									"<td style='color:red;'>" + data[i].recordBill + "元</td>" +
+									"<td>" + data[i].createTime + "</td>" +
+									"<td style='color:red;'>" + data[i].user.amount + "元</td>" +
+									"<td><a href='queryUserNoteByPage?openid=" + data[i].openid + "&page=1'>账单详情</a></td>" +
+									"</tr>";
 						}
-						$(".table tr:eq(0)").after(str);
-					})
-					//window.location.href="pagequery?page="+page;
+						$(".sa").remove(); // 移除旧的数据行
+						$(".table tr:eq(0)").after(str); // 插入新的数据行
+					});
 				}
 			}
 		</script>

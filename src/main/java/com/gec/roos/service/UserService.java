@@ -6,6 +6,7 @@ import com.gec.roos.vo.PayVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserService {
 
@@ -28,4 +29,10 @@ public interface UserService {
     List<Note> queryAllMyNote(String openid);
     //查询该用户5条账单信息
     List<Note> queryMyNote(String openid);
+
+    //分页条件查询会员信息
+    Map<String, Object> queryMemberByPageAndPhone(int page, String phone);
+
+    //分页查询会员信息
+    List<User> queryMemberByPage(int page);
 }

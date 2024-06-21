@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 @Controller
@@ -185,5 +187,30 @@ public class UserController {
         model.addAttribute("openid", openid);
         model.addAttribute("msg", "ok");
         return "front/mynote";
+    }
+
+    //分页条件查询会员信息
+    @RequestMapping("/queryMemberByPageAndPhone")
+    public String queryMemberByPageAndPhone(Model model , @RequestParam("page") int page ,
+                                            @RequestParam(value = "phone",required = false) String phone){
+        //调用查询接口
+        Map<String,Object> map = userService.queryMemberByPageAndPhone(page,phone);
+
+        model.addAttribute("msg",map.get("msg"));
+        model.addAttribute("users",map.get("users"));
+        model.addAttribute("countPage",map.get("countPage"));
+        model.addAttribute("count",map.get("count"));
+
+        model.addAttribute("phone",phone);
+        return "back/member";
+    }
+
+    //分页条件查询会员信息
+    @RequestMapping("/queryMemberByPage")
+    @ResponseBody
+    public List<User> queryMemberByPage(Model model , @RequestParam("page") int page ){
+        //调用查询接口
+        List<User>  users= userService.queryMemberByPage(page);
+        return users;
     }
 }

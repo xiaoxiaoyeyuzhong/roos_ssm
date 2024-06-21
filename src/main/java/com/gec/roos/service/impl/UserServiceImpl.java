@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -103,5 +105,33 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Note> queryMyNote(String openid) {
         return noteMapper.queryMyNote(openid);
+    }
+
+    @Override
+    public Map<String, Object> queryMemberByPageAndPhone(int page, String phone) {
+        String msg = null;
+        //查询总记录数
+        int count = userMapper.getCountByPhone(phone);
+        int countPage = count%5==0?count/5:count/5+1;
+        //计算查询起始下标
+        int start = (page-1)*5;
+        List<User> users = userMapper.queryMemberByPageAndPhone(start,phone);
+
+        if(users.size()==0){
+            msg = "0";
+        }
+        //数据封装
+        Map<String,Object> map = new HashMap<>();
+        map.put("msg",msg);
+        map.put("countPage",countPage);
+        map.put("users",users);
+        map.put("count",count);
+        return map;
+    }
+
+    @Override
+    public List<User> queryMemberByPage(int page) {
+        int start = (page-1)*5;
+        return userMapper.queryMemberByPage(start);
     }
 }

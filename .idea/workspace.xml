@@ -9,16 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.餐位预订及消费功能完成&#10;2.显示会员界面完成">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/MD5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/NoteMapper.java" afterDir="false" />
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.会员注册充值功能完成，&#10;2。记得如果string有小数点，直接转int是不行的，需要先转double，再转int。">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/NoteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/NoteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/NoteServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/NoteMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/AlipayTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/AlipayTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/NoteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/NoteMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userNote.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/userNote.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +85,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.gec.roos.dao" />
       <recent name="com.gec.roos.service" />
+      <recent name="com.gec.roos.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\files\idea_workplace\roos_ssm\src\main\java\com\gec\roos\config" />
@@ -231,7 +233,7 @@
       <workItem from="1718894242370" duration="33000" />
       <workItem from="1718929333135" duration="12319000" />
       <workItem from="1718946465993" duration="3903000" />
-      <workItem from="1718951931555" duration="2750000" />
+      <workItem from="1718951931555" duration="8066000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察">
       <created>1718699524656</created>
@@ -289,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718941123848</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1.会员注册充值功能完成，&#10;2。记得如果string有小数点，直接转int是不行的，需要先转double，再转int。">
+      <created>1718955469567</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718955469567</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +324,7 @@
     <MESSAGE value="将OrderFoMapper.java中的addOrderFos方法替换为xml方式注入sql，发现open=&quot;(&quot; close=&quot;)&quot;在这里不应加入，否则会让insert变成插入一条数据，五个值插入到4个字段里（测试时数据库当前订单五个菜品，所以五个值）。" />
     <MESSAGE value="点餐支付功能完成，且已支付但是未消费的订单退款已实现，在AlipayTemplate.java中添加了（+ &quot;\&quot;refund_amount\&quot;:\&quot;&quot;+ paymentInfo.getTotalAmount() +&quot;\&quot;,&quot; // 设置退款金额）括号中的内容，因为不设置退款金额，就退不了款。" />
     <MESSAGE value="1.餐位预订及消费功能完成&#10;2.显示会员界面完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.餐位预订及消费功能完成&#10;2.显示会员界面完成" />
+    <MESSAGE value="1.会员注册充值功能完成，&#10;2。记得如果string有小数点，直接转int是不行的，需要先转double，再转int。" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.会员注册充值功能完成，&#10;2。记得如果string有小数点，直接转int是不行的，需要先转double，再转int。" />
   </component>
 </project>
