@@ -91,4 +91,40 @@ public class AlipayTemplate {
         //返回是否 退款成功
         return response.isSuccess();
     }
+
+    public  String recharge(PayVo vo,String args) throws AlipayApiException {
+
+        //1、根据支付宝的配置生成一个支付客户端
+        AlipayClient alipayClient = new DefaultAlipayClient(gatewayUrl,
+                app_id, merchant_private_key, "json",
+                charset, alipay_public_key, sign_type);
+
+        //2、创建一个支付请求 //设置请求参数
+        AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();
+        //2.1 修改同步跳转路径为会员充值成功 请求
+        return_url="http://localhost:8888/roos_ssm/rechargeSuccessed";
+        alipayRequest.setReturnUrl(return_url+args);
+        alipayRequest.setNotifyUrl(notify_url);
+        //商户订单号，商户网站订单系统中唯一订单号，必填
+        String out_trade_no = vo.getOut_trade_no();
+        //付款金额，必填
+        String total_amount = vo.getTotal_amount();
+        //订单名称，必填
+        String subject = vo.getSubject();
+        //商品描述，可空
+        String body = vo.getBody();
+
+        alipayRequest.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
+                + "\"total_amount\":\""+ total_amount +"\","
+                + "\"subject\":\""+ subject +"\","
+                + "\"body\":\""+ body +"\","
+                + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
+
+        String result = alipayClient.pageExecute(alipayRequest).getBody();
+
+        //会收到支付宝的响应，响应的是一个页面，只要浏览器显示这个页面，就会自动来到支付宝的收银台页面
+        System.out.println("支付宝的响应："+result);
+        return result;
+    }
+
 }

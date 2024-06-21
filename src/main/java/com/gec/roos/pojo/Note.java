@@ -4,6 +4,7 @@ package com.gec.roos.pojo;
  * @author hping
  *
  */
+
 public class Note {
 
 	private Integer id;
@@ -13,7 +14,8 @@ public class Note {
 	private String createTime; //创建时间
 	
 	private User user;
-	
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -56,6 +58,6 @@ public class Note {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
+
+
 }
