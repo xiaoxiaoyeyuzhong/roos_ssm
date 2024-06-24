@@ -371,4 +371,16 @@ public class FrontController {
         return success;
     }
 
+
+    @RequestMapping("/openShopList")
+    public String openShopList(Model model,String openid){
+        // 获取所有的菜品分类名称
+        List<FoodType> ftlist = foodTypeService.queryAllfoodType();
+        //获取分店信息
+        List<Shop> shops = shopService.queryAllShopInfo();
+        model.addAttribute("openid", openid);
+        model.addAttribute("ftlist", ftlist);
+        model.addAttribute("shops", shops);
+        return "front/shoplist";
+    }
 }

@@ -27,7 +27,7 @@
 				<div class="col-sm-10">
 					<p class="text-center title">礼 品 信 息</p>
 					<ul class="nav nav-tabs" role="tablist">
-						 <li role="presentation" class="active"><a href="querylipinorder?page=1">未处理订单</a></li>
+						 <li role="presentation" class="active"><a href="queryUndeliveredGifts?page=1">未处理订单</a></li>
 						 <li role="presentation"><a href="queryDeliveredGifts?page=1">已处理订单</a></li>
 					</ul>
 					<table class="table">

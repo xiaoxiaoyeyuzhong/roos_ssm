@@ -9,27 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.后台礼品增删改查实现&#10;2.前台礼品查看实现，删除地址实现。">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/GiftOrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" afterDir="false" />
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/interceptors/LoginCheckInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/AlipayTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/AlipayTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/SpringmvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/SpringmvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FrontController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FrontController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/IntegralShopConttroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/IntegralShopConttroller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/AddressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/AddressMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Gift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/pojo/Gift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/AddressService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/AddressServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/GiftOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/GiftOrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/ShopMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/ShopMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/ShopServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/member.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/undeliveredGifts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/undeliveredGifts.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +245,8 @@
       <workItem from="1718983154275" duration="20000" />
       <workItem from="1719052428292" duration="25000" />
       <workItem from="1719156810471" duration="1147000" />
-      <workItem from="1719188321142" duration="11421000" />
+      <workItem from="1719188321142" duration="11760000" />
+      <workItem from="1719211949179" duration="10592000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察">
       <created>1718699524656</created>
@@ -326,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718968599349</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。">
+      <created>1719200566920</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719200566920</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,19 +361,20 @@
     <MESSAGE value="1.会员注册充值功能完成，&#10;2。记得如果string有小数点，直接转int是不行的，需要先转double，再转int。" />
     <MESSAGE value="1.后台会员管理功能实现&#10;2.编写分页查询的时候，记得看start的值，是(page-1)/?，问号代表每页要展示的条数，因为我们是从第0个开始展示的，所以第一页起始位置是(1-1)/5" />
     <MESSAGE value="1.后台礼品增删改查实现&#10;2.前台礼品查看实现，删除地址实现。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.后台礼品增删改查实现&#10;2.前台礼品查看实现，删除地址实现。" />
+    <MESSAGE value="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java</url>
-          <line>89</line>
+          <line>102</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java</url>
-          <line>39</line>
+          <line>52</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

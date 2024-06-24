@@ -35,4 +35,7 @@ public interface UserService {
 
     //分页查询会员信息
     List<User> queryMemberByPage(int page);
+
+    //通过openid修改会员积分
+    int updateUserIntegralByopenid(int integral, String openid);
 }

@@ -48,6 +48,11 @@ public interface  UserMapper {
             +"</script>")
     List<User> queryMemberByPageAndPhone(@Param("start") int start, @Param("phone") String phone);
 
+    //分页查询会员信息
     @Select("select * from user limit #{start},5")
     List<User> queryMemberByPage(int start);
+
+    //通过openid 修改会员积分
+    @Update("update user set integral=integral+#{integral} where openid =#{openid}")
+    int updateUserIntegralByopenid(@Param("integral") int integral,@Param("openid") String openid);
 }

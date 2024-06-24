@@ -134,4 +134,10 @@ public class UserServiceImpl implements UserService {
         int start = (page-1)*5;
         return userMapper.queryMemberByPage(start);
     }
+
+    @Override
+    public int updateUserIntegralByopenid(int integral, String openid) {
+        return userMapper.updateUserIntegralByopenid(integral,openid);
+    }
+
 }

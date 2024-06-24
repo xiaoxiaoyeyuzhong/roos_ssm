@@ -195,7 +195,16 @@
 			
 			//线下兑换
 			function duihuan(openid){
-				sessionStorage.openid=openid;
+				console.log("duihuan function called with openid:", openid);
+
+				// 清空旧的 sessionStorage.openid 值
+				sessionStorage.removeItem('openid');
+
+				// 设置新的 sessionStorage.openid 值
+				sessionStorage.openid = openid;
+
+				// 弹出提示，显示当前存储的 openid
+				alert("Stored openid in sessionStorage: " + sessionStorage.openid);
 			}
 			
 			//确定兑换
@@ -259,7 +268,7 @@
 									+"<p class='text-center bb'>"+data[i].createTime+"</p>"
 								+"</div>"
 								+"<div class='col-md-1 text-center'>操作"	
-									+"<button class='btn' data-toggle='modal' data-target='#myModal'style='margin-top:20px;'>线下兑换</button>"	
+									+"<button class='btn' data-toggle='modal' data-target='#myModal' onclick='duihuan(\"" + data[i].openid + "\")' style='margin-top:20px;'>线下兑换</button>"
 								+"</div>"
 							+"</div>";
 						}
@@ -313,7 +322,7 @@
 									+"<p class='text-center bb'>"+data[i].createTime+"</p>"
 								+"</div>"
 								+"<div class='col-md-1 text-center'>操作"	
-									+"<button class='btn' data-toggle='modal' data-target='#myModal' style='margin-top:20px;'>线下兑换</button>"	
+										+"<button class='btn' data-toggle='modal' data-target='#myModal' onclick='duihuan(\"" + data[i].openid + "\")' style='margin-top:20px;'>线下兑换</button>"
 								+"</div>"
 							+"</div>";
 						}
