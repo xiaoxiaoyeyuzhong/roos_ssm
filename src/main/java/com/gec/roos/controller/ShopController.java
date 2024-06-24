@@ -1,10 +1,8 @@
 package com.gec.roos.controller;
 
-import com.gec.roos.pojo.Address;
-import com.gec.roos.pojo.FoodType;
-import com.gec.roos.pojo.Gift;
-import com.gec.roos.pojo.User;
+import com.gec.roos.pojo.*;
 import com.gec.roos.service.*;
+import com.gec.roos.vo.PayVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +23,10 @@ public class ShopController {
 
     @Autowired
     private FoodTypeService foodTypeService;
+
+    @Autowired
+    private GiftOrderService giftOrderService;
+
     //兑换详情
     @RequestMapping("/exchange")
     public String exchange(Model model, String openid, int pid){
@@ -53,6 +55,29 @@ public class ShopController {
         return "shop/exchange";
     }
 
+    //查询用户是否有默认地址
+    @RequestMapping("/queryAddress")
+    @ResponseBody
+    public String queryAddress(Model model,String openid) {
+        String success = null;
+        Address address = addressService.queryAddressInfo(openid);
+        if (address != null) {//有收件地址
+            success = "ok";
+        } else {
+            success = "no";
+        }
+        return success;
+    }
+
+    //编辑收货地址
+    @RequestMapping("/getUserAddress")
+    @ResponseBody
+    public Address queryAddressById(String openid){
+        //根据openid获取收货地址
+        Address address = addressService.queryAddressInfo(openid);
+        return address;
+    }
+
     //删除收件地址
     @RequestMapping("/delAddressInfo")
     @ResponseBody
@@ -62,5 +87,18 @@ public class ShopController {
 //        model.addAttribute("data",data);
         String msg = Integer.toString(result);
         return msg;
+    }
+
+    //运费支付成功回调请求
+    @RequestMapping("postagePaymentSuccessed")
+    public String postagePaymentSuccessed(String openid , int pid , PayVo payVo){
+        //1.执行运费支付成功在gift_order 插入记录
+        GiftOrder giftOrder = new GiftOrder();
+        giftOrder.setOpenid(openid);
+        giftOrder.setPid(pid);
+        giftOrder.setState("已提交订单,待发货");
+        giftOrderService.addGiftOrder(giftOrder);
+        //重定向到 用户已兑换请求
+        return "redirect:queryMyGift?openid="+openid;
     }
 }

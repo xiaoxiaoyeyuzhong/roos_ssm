@@ -16,8 +16,21 @@ public class AddressServiceImpl  implements AddressService {
         return addressMapper.queryAddressInfo(openid);
     }
 
+    //添加收件地址
+    @Override
+    public int addAddressInfo(Address addressInfo) {
+        return addressMapper.addAddressInfo(addressInfo);
+    }
+    //修改收件地址
+    @Override
+    public int updateAddressInfo(Address addressInfo) {
+        return addressMapper.updateAddressInfo(addressInfo);
+    }
+
     @Override
     public int delAddressInfo(String openid) {
         return addressMapper.delAddressInfo(openid);
     }
+
+
 }

@@ -68,20 +68,25 @@ public class GiftController {
     //修改礼品信息
     @RequestMapping("/updateGiftInfo")
     public String updateGift(HttpServletRequest request, @RequestParam("file") MultipartFile photo, Gift gift){
+        System.out.println("为啥修改失败,gift="+gift.toString());
         String msg = null;
-        //获取文件名称
-        String filename = photo.getOriginalFilename();
         // 文件上传的路径
-        String path =  request.getSession().getServletContext().getRealPath("/upload/gift");
-        try {
+        String path = request.getSession().getServletContext().getRealPath("/upload/gift");
 
-            assert filename != null;
-            File file = new File(path, filename);
-            //完成文件上传
-            photo.transferTo(file);
-            //设置图片路径
-            gift.setImgurl("upload/gift/"+filename);
-            //添加礼品
+        try {
+            // 检查用户是否上传了新图片
+            if (photo != null && !photo.isEmpty()) {
+                // 获取文件名称
+                String filename = photo.getOriginalFilename();
+                assert filename != null;
+                File file = new File(path, filename);
+                // 完成文件上传
+                photo.transferTo(file);
+                // 设置新图片路径
+                gift.setImgurl("upload/gift/" + filename);
+            }
+            System.out.println("为啥修改失败,gift="+gift.toString());
+            //修改礼品
             giftService.updateGift(gift);
             msg = "1";
         } catch (Exception e) {

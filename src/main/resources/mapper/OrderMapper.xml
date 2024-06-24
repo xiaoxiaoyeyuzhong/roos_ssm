@@ -4,7 +4,7 @@
 
 <mapper namespace="com.gec.roos.dao.OrderMapper">
 
-    <resultMap type="Order" id="orderResultMap">
+    <resultMap type="Order" id="orderPaidResultMap">
         <id property="orderid" column="orderid"/>
         <result property="openid" column="openid"/>
         <result property="state" column="state"/>
@@ -34,7 +34,7 @@
     </resultMap>
 
     <!-- 查询已支付未消费订单 -->
-    <select id="queryPaidOrderDetail" parameterType="string" resultMap="orderResultMap">
+    <select id="queryPaidOrderDetail" parameterType="string" resultMap="orderPaidResultMap">
         select o.orderid, o.openid, o.state, o.payment, o.isexpend, o.eatdate, o.create_time as o_create_time,
                d.id, d.orderid as d_orderid, d.number, d.fid, d.create_time as d_create_time,
                f.fid as f_fid, f.typeid, f.foodName, f.picurl, f.foodPrice, f.foodVIP, f.integral, f.feature, f.create_time as f_create_time
@@ -69,5 +69,36 @@
         select * from orders o JOIN shop s ON(o.shopid=s.id)
         where isexpend=#{isexpend} and !ISNULL(isexpend) and !ISNULL(payment) and !ISNULL(eatdate)
         ORDER BY create_time DESC limit #{start},10
+    </select>
+
+    <!-- 三表连接查询 -->
+    <resultMap type="Food" id="foodResultMap">
+        <id property="fid" column="fid"/>
+        <result property="foodName" column="foodName"/>
+        <result property="foodPrice" column="foodPrice"/>
+        <result property="picurl" column="picurl"/>
+    </resultMap>
+
+    <resultMap type="OrderFo" id="orderfoResultMap">
+        <id property="id" column="id"/>
+        <result property="orderid" column="orderid"/>
+        <result property="fid" column="fid"/>
+        <result property="number" column="number"/>
+        <association property="food" javaType="Food" resultMap="foodResultMap"/>
+    </resultMap>
+
+    <resultMap type="Order" id="orderResultMap">
+        <id property="orderid" column="orderid"/>
+        <result property="openid" column="openid"/>
+        <result property="state" column="state"/>
+        <result property="eatdate" column="eatdate"/>
+        <result property="payment" column="payment"/>
+        <result property="isexpend" column="isexpend"/>
+        <!-- 将article list属性映射到collection -->
+        <collection property="odf" ofType="OrderFo" resultMap="orderfoResultMap"/>
+    </resultMap>
+<!--    查询到店付未消费订单-->
+    <select id="queryPaymentOrderDetail" parameterType="string" resultMap="orderResultMap">
+        select * from orders o JOIN orderfo d ON(o.orderid = d.orderid) JOIN food f ON(d.fid = f.fid) where o.openid=#{openid} and o.payment='到店付' and o.isexpend='未消费' order by o.create_time desc
     </select>
 </mapper>

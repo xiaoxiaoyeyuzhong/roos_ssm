@@ -153,5 +153,15 @@ public class OrderServiceImpl  implements OrderService {
         }
         return success;
     }
+
+    @Override
+    public List<Order> queryPaymentOrderDetail(String openid) {
+        return orderMapper.queryPaymentOrderDetail(openid);
+    }
+
+    @Override
+    public void cancelPaymentAtTheStore(int orderid) {
+        orderMapper.cancelPaymentAtTheStore(orderid);
+    }
 }
 

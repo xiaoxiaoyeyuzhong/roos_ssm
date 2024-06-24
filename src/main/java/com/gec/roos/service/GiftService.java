@@ -1,6 +1,7 @@
 package com.gec.roos.service;
 
 import com.gec.roos.pojo.Gift;
+import com.gec.roos.pojo.GiftOrder;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface GiftService {
     void updateGift(Gift gift);
     //通过礼品id删除
     void deleteGiftInfo(int pid);
+
+    //查询会员兑换记录
+    List<GiftOrder> queryAll(String openid);
 }

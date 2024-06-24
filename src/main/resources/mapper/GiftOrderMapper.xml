@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.roos.dao.GiftOrderMapper">
+    <!-- 礼品兑换订单与礼品表关联 -->
+    <resultMap type="GiftOrder" id="Gift_orderMap">
+        <id property="id" column="id"/>
+        <result property="openid" column="openid"/>
+        <result property="state" column="state"/>
+        <result property="createTime" column="ocreateTime"/>
+        <association property="gift" javaType="Gift">
+            <id property="pid" column="pid"/>
+            <result property="pname" column="pname"/>
+            <result property="integral" column="integral"/>
+            <result property="number" column="number"/>
+            <result property="imgurl" column="imgurl"/>
+            <result property="postage" column="postage"/>
+            <result property="createTime" column="createTime"/>
+        </association>
+    </resultMap>
+    <!-- 查询所有已兑换的礼品订单 -->
+    <select id="queryAll" parameterType="String" resultMap="Gift_orderMap">
+        select o.id,o.openid,o.state,o.createTime ocreateTime , g.*
+        from gift_order o left join gift g ON o.pid=g.pid
+        where openid=#{openid}  order by o.createTime desc
+    </select>
+</mapper>

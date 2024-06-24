@@ -59,4 +59,17 @@ public class Gift {
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
+
+	@Override
+	public String toString() {
+		return "Gift{" +
+				"pid=" + pid +
+				", pname='" + pname + '\'' +
+				", integral=" + integral +
+				", number='" + number + '\'' +
+				", imgurl='" + imgurl + '\'' +
+				", postage='" + postage + '\'' +
+				", createTime='" + createTime + '\'' +
+				'}';
+	}
 }

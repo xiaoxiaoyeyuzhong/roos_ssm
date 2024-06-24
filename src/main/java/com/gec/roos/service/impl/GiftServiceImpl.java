@@ -1,7 +1,9 @@
 package com.gec.roos.service.impl;
 
 import com.gec.roos.dao.GiftMapper;
+import com.gec.roos.dao.GiftOrderMapper;
 import com.gec.roos.pojo.Gift;
+import com.gec.roos.pojo.GiftOrder;
 import com.gec.roos.service.GiftService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,9 @@ import java.util.List;
 public class GiftServiceImpl implements GiftService {
     @Autowired
     private GiftMapper giftMapper;
+
+    @Autowired
+    private GiftOrderMapper giftOrderMapper;
 
     //查询所有礼品信息
     @Override
@@ -38,5 +43,11 @@ public class GiftServiceImpl implements GiftService {
     @Override
     public void deleteGiftInfo(int pid) {
         giftMapper.deleteGiftInfo(pid);
+    }
+
+    //查询会员礼品兑换记录
+    @Override
+    public List<GiftOrder> queryAll(String openid) {
+        return giftOrderMapper.queryAll(openid);
     }
 }

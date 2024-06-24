@@ -34,4 +34,10 @@ public interface OrderService {
 
     //订单确认消费
     String OKOrderState(int orderid, String openid);
+
+    //查询到店付未消费订单
+    List<Order> queryPaymentOrderDetail(String openid);
+
+    //取消到店付未消费订单
+    void cancelPaymentAtTheStore(int orderid);
 }

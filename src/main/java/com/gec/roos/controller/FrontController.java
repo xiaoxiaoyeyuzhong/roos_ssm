@@ -181,6 +181,39 @@ public class FrontController {
         return success;
     }
 
+    //查看到店付且未消费订单的详情信息
+    @RequestMapping("/queryudingOrderDetail")
+    public String queryudingOrderDetail(HttpServletRequest request,String openid){
+        String msg = null;
+        // 获取所有的菜品分类名称
+        List<FoodType> ftlist = foodTypeService.queryAllfoodType();
+
+        List<Order> orders = orderService.queryPaymentOrderDetail(openid);
+        if(orders.size()==0){
+            msg = "0";
+        }
+        request.setAttribute("orders", orders);
+        request.setAttribute("msg", msg);
+        request.setAttribute("openid", openid);
+        request.setAttribute("ftlist", ftlist);
+        return "front/ordering";
+    }
+
+    //用户取消到店付且未消费订单
+    @RequestMapping("/changeOrderStateNo")
+    @ResponseBody
+    public String cancelPaymentAtTheStore(int orderid){
+        String success = null;
+        try {
+            orderService.cancelPaymentAtTheStore(orderid);
+            success = "1";
+        } catch (Exception e) {
+            success = "0";
+        }
+        return success;
+    }
+
+
     //支付宝生成支付页面
     @RequestMapping(value = "/payOrder")
     public void alipay(HttpServletResponse response, String eatdate, String openid, int orderid, int shopid) throws AlipayApiException {
