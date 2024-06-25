@@ -2,11 +2,9 @@ package com.gec.roos.dao;
 
 import com.gec.roos.pojo.PaymentInfo;
 import com.gec.roos.vo.PayVo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
+@Mapper
 public interface PaymentMapper {
     //添加交易流水
     @Insert("insert into paymentinfo (orderid,outTradeNo,tradeNo,totalAmount,payStatus,createTime,updateTime) " +

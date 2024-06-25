@@ -9,25 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/interceptors/LoginCheckInterceptor.java" afterDir="false" />
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.礼品线下兑换功能实现&#10;2.已兑换订单查询mapper改用xml配置，使用resultMap，不查询所有，不然结果集不能正确和前端参数进行绑定。&#10;3.门店后台增删改查，前台展示功能实现&#10;4.登录拦截实现了一些，如果是在地址要输入参数才能访问的，输一个参数进去，可以进去，进去后，可以访问没有纳入拦截的网页。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/SpringmvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/config/SpringmvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FrontController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/FrontController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/GiftOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/GiftOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/ShopMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/ShopMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/ShopServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/member.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/undeliveredGifts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/undeliveredGifts.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,26 +53,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/files/idea_workplace/roos_ssm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.47356322&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;046a4fc407a2738eca18d5a309ed14d2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/files/idea_workplace/roos_ssm",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.47356322",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "046a4fc407a2738eca18d5a309ed14d2"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.gec.roos.service" />
@@ -246,7 +229,11 @@
       <workItem from="1719052428292" duration="25000" />
       <workItem from="1719156810471" duration="1147000" />
       <workItem from="1719188321142" duration="11760000" />
-      <workItem from="1719211949179" duration="10592000" />
+      <workItem from="1719211949179" duration="11222000" />
+      <workItem from="1719274995391" duration="1903000" />
+      <workItem from="1719279864874" duration="255000" />
+      <workItem from="1719280134801" duration="26000" />
+      <workItem from="1719287186429" duration="179000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察">
       <created>1718699524656</created>
@@ -332,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719200566920</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1.礼品线下兑换功能实现&#10;2.已兑换订单查询mapper改用xml配置，使用resultMap，不查询所有，不然结果集不能正确和前端参数进行绑定。&#10;3.门店后台增删改查，前台展示功能实现&#10;4.登录拦截实现了一些，如果是在地址要输入参数才能访问的，输一个参数进去，可以进去，进去后，可以访问没有纳入拦截的网页。">
+      <created>1719222734413</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719222734413</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +356,8 @@
     <MESSAGE value="1.后台会员管理功能实现&#10;2.编写分页查询的时候，记得看start的值，是(page-1)/?，问号代表每页要展示的条数，因为我们是从第0个开始展示的，所以第一页起始位置是(1-1)/5" />
     <MESSAGE value="1.后台礼品增删改查实现&#10;2.前台礼品查看实现，删除地址实现。" />
     <MESSAGE value="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。" />
+    <MESSAGE value="1.礼品线下兑换功能实现&#10;2.已兑换订单查询mapper改用xml配置，使用resultMap，不查询所有，不然结果集不能正确和前端参数进行绑定。&#10;3.门店后台增删改查，前台展示功能实现&#10;4.登录拦截实现了一些，如果是在地址要输入参数才能访问的，输一个参数进去，可以进去，进去后，可以访问没有纳入拦截的网页。" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.礼品线下兑换功能实现&#10;2.已兑换订单查询mapper改用xml配置，使用resultMap，不查询所有，不然结果集不能正确和前端参数进行绑定。&#10;3.门店后台增删改查，前台展示功能实现&#10;4.登录拦截实现了一些，如果是在地址要输入参数才能访问的，输一个参数进去，可以进去，进去后，可以访问没有纳入拦截的网页。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

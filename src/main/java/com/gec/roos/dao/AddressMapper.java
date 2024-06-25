@@ -3,6 +3,7 @@ package com.gec.roos.dao;
 import com.gec.roos.pojo.Address;
 import org.apache.ibatis.annotations.*;
 
+@Mapper
 public interface AddressMapper {
     //通过openId查询会员收件地址
     @Select("select * from address where openid=#{openid}")

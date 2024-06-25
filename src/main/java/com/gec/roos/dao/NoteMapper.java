@@ -2,11 +2,13 @@ package com.gec.roos.dao;
 
 import com.gec.roos.pojo.Note;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
+@Mapper
 public interface NoteMapper {
     //添加会员充值记录
     @Insert("insert into note (openid,recordBill,money,createTime) values (#{openid},#{recordBill},#{money},now()) ")

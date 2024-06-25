@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+@Mapper
 public interface FoodMapper {
     //查询所有菜品
     List<Food> queryAllfood(int start);

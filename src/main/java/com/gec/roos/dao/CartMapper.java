@@ -2,10 +2,12 @@ package com.gec.roos.dao;
 
 import com.gec.roos.pojo.Cart;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
+@Mapper
 public interface CartMapper {
 
     //查询 该用户购物车是否存在菜品

@@ -2,11 +2,13 @@ package com.gec.roos.dao;
 
 import com.gec.roos.pojo.Dwei;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
+@Mapper
 public interface DweiMapper {
     //添加用户定位
     @Insert("insert into dwei(openid,activetime,personNum,diskNum,mobile,name,state,remark,create_time) values(#{openid},#{activetime},#{personNum},#{diskNum},#{mobile},#{name},\"未使用\",#{remark},now())")

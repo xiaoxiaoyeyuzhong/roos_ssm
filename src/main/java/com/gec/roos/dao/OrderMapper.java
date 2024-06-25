@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+@Mapper
 public interface OrderMapper {
     //创建订单
     @Insert("insert into orders(openid,state,create_time) values(#{openid},\"未支付\",now()) ")

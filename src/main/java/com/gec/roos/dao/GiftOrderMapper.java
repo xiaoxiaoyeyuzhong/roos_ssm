@@ -2,11 +2,13 @@ package com.gec.roos.dao;
 
 import com.gec.roos.pojo.GiftOrder;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
+@Mapper
 public interface GiftOrderMapper {
 
     //添加礼品兑换记录

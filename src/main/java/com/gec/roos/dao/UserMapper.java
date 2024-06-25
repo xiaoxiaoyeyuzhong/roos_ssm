@@ -2,13 +2,11 @@ package com.gec.roos.dao;
 
 import com.gec.roos.pojo.Note;
 import com.gec.roos.pojo.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+@Mapper
 public interface  UserMapper {
 
     @Select("select * from user where openid=#{openid}")

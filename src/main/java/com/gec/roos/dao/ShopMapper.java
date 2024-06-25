@@ -1,13 +1,11 @@
 package com.gec.roos.dao;
 
 import com.gec.roos.pojo.Shop;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+@Mapper
 public interface ShopMapper {
     //查询所有门店
     @Select("select * from shop")
