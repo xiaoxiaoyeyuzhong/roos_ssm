@@ -213,4 +213,70 @@ public class UserController {
         List<User>  users= userService.queryMemberByPage(page);
         return users;
     }
+
+    //打开修改用户名页面
+    @RequestMapping("/openUpdateUserName")
+    public String openUpdateUserName(HttpServletRequest request, String openid) {
+        String msg = null;
+        //通过openid查询用户
+        User user = userService.queryUser(openid);
+        if(user==null){
+            msg = "0";
+        }
+        request.setAttribute("msg",msg);
+        request.setAttribute("user",user);
+        request.setAttribute("openid",openid);
+        return "front/xiugaiyonghuming";
+    }
+
+    //修改用户名
+    @RequestMapping("/updateUserName")
+    public String updateUserName(Model model,String openid,User user) {
+        String data = null;
+        user.setOpenid(openid);
+        userService.updateUserName(user);
+        data = "1";
+        model.addAttribute("data",data);
+        model.addAttribute("openid",openid);
+
+        return "front/xiugaiyonghuming";
+    }
+
+    //进入修改密码页面
+    @RequestMapping("/openUpdatePwd")
+    public String openUpdatePwd(Model model, String openid) {
+        String url = null;
+
+        User user = userService.queryUser(openid);
+        if (user == null) {
+            model.addAttribute("msg", "0");
+            url = "front/register";
+        } else {
+            model.addAttribute("user",user);
+            url = "front/xiugaimima";
+        }
+        model.addAttribute("openid", openid);
+
+        return url;
+    }
+
+    //修改密码
+    @RequestMapping("/updatePwd")
+    @ResponseBody
+    public String updatePwd(HttpServletRequest request, String openid,User user)
+    {
+        String data = null;
+        User user1 = userService.queryUser(openid);
+        if(user1 != null){
+            boolean flag = user1.getPhone().equals(user.getPhone());
+            if(flag){
+                userService.updatePassword(user);
+                data = "1";
+            }else {
+                data = "-1";
+            }
+        }
+        return data ;
+    }
+
 }

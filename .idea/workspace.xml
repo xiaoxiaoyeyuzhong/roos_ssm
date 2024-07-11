@@ -9,14 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="礼品">
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="分页查询已提交待发货礼品订单">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/deliveredGifts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/deliveredGifts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/xiugaimima.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/front/xiugaimima.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,26 +59,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/files/idea_workplace/roos_ssm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;库&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.47356322&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;046a4fc407a2738eca18d5a309ed14d2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/files/idea_workplace/roos_ssm/src/main/java/com/gec/roos/config",
+    "project.structure.last.edited": "库",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.47356322",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "046a4fc407a2738eca18d5a309ed14d2"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.gec.roos.service" />
@@ -255,6 +258,7 @@
       <workItem from="1720483457156" duration="290000" />
       <workItem from="1720492024855" duration="645000" />
       <workItem from="1720504451426" duration="722000" />
+      <workItem from="1720658372068" duration="4069000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察">
       <created>1718699524656</created>
@@ -354,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719302774590</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="分页查询已提交待发货礼品订单">
+      <created>1720658453378</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720658453378</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +397,8 @@
     <MESSAGE value="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。" />
     <MESSAGE value="1.礼品线下兑换功能实现&#10;2.已兑换订单查询mapper改用xml配置，使用resultMap，不查询所有，不然结果集不能正确和前端参数进行绑定。&#10;3.门店后台增删改查，前台展示功能实现&#10;4.登录拦截实现了一些，如果是在地址要输入参数才能访问的，输一个参数进去，可以进去，进去后，可以访问没有纳入拦截的网页。" />
     <MESSAGE value="为mapper类加入了@mapper注解，serviceImpl不报错了。" />
-    <option name="LAST_COMMIT_MESSAGE" value="为mapper类加入了@mapper注解，serviceImpl不报错了。" />
+    <MESSAGE value="分页查询已提交待发货礼品订单" />
+    <option name="LAST_COMMIT_MESSAGE" value="分页查询已提交待发货礼品订单" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

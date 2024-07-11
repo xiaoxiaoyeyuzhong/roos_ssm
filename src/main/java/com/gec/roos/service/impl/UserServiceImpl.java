@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private NoteMapper noteMapper;
 
+
     @Override
     public void queryMyOrder(String openid) {
         userMapper.queryMyOrder(openid);
@@ -139,5 +140,21 @@ public class UserServiceImpl implements UserService {
     public int updateUserIntegralByopenid(int integral, String openid) {
         return userMapper.updateUserIntegralByopenid(integral,openid);
     }
+
+    @Override
+    public void updateUserName(User user){
+        userMapper.updateUserName(user);
+    }
+
+    @Override
+    public void updatePassword(User user){
+        //1.进行密码加密
+        String password = user.getPwd()+"xzg";
+        password = MD5.stringMD5(password);
+        user.setPwd(password);
+        userMapper.updateUserPwd(user);
+        return;
+    }
+
 
 }

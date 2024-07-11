@@ -53,4 +53,12 @@ public interface  UserMapper {
     //通过openid 修改会员积分
     @Update("update user set integral=integral+#{integral} where openid =#{openid}")
     int updateUserIntegralByopenid(@Param("integral") int integral,@Param("openid") String openid);
+
+    //修改用户名
+    @Update("update user set userName=#{userName} where openid=#{openid}")
+    void updateUserName(User user);
+
+    //修改用户密码
+    @Update("update user set pwd=#{pwd} where openid=#{openid}")
+    void updateUserPwd(User user);
 }

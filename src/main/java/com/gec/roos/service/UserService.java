@@ -38,4 +38,10 @@ public interface UserService {
 
     //通过openid修改会员积分
     int updateUserIntegralByopenid(int integral, String openid);
+
+    //修改用户名
+    void updateUserName(User user);
+
+    //修改密码
+    void updatePassword(User user);
 }
