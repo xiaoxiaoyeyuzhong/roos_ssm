@@ -31,7 +31,7 @@ public class AlipayTemplate {
     // 字符编码格式
     private  String charset = "utf-8";
 
-    // 支付宝网关； https://openapi.alipaydev.com/gateway.do
+    // 支付宝网关；
     private  String gatewayUrl = "https://openapi-sandbox.dl.alipaydev.com/gateway.do";
 
     public  String pay(PayVo vo, String args) throws AlipayApiException {
