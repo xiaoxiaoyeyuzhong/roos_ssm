@@ -106,6 +106,10 @@ public class ShopController {
         giftOrder.setPid(pid);
         giftOrder.setState("已提交订单,待发货");
         giftOrderService.addGiftOrder(giftOrder);
+        Gift gift =new Gift();
+        gift=giftService.queryGiftInfoById(pid);
+
+        userService.updateUserIntegralByopenid(-gift.getIntegral(),openid);
         //重定向到 用户已兑换请求
         return "redirect:queryMyGift?openid="+openid;
     }

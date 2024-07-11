@@ -59,13 +59,38 @@ public class GiftOrderServiceImpl implements GiftOrderService {
         int countPage = count%8==0?count/8:count/8+1;
         //获取最新8条已处理的订单
         int start  = (page-1)*8;
-        List<GiftOrder> giftOrders = giftOrderMapper.queryDeliveredGiftsByPage(page);
+        List<GiftOrder> giftOrders = giftOrderMapper.queryDeliveredGiftsByPage(start);
         if(giftOrders.size()==0){
             map.put("size","0");
         }
         map.put("countPage",countPage);
         map.put("giftorder",giftOrders);
         return map;
+    }
+
+    @Override
+    public List<GiftOrder> querylipinOrderPage(int page) {
+        //获取已兑换未发货总记录数
+        int count = giftOrderMapper.queryUndeliveredGiftsCount();
+        int countPage = count%8==0? count/8:count/8+1;//每页显示8条
+        //计算查询起始页
+        int start = (page-1)*8;
+        //分页查询已兑换未发货数据集合
+        List<GiftOrder> giftorders = giftOrderMapper.queryUndeliveredGiftsByPage(start);
+        return giftorders;
+    }
+
+    //分页查询已处理礼品订单
+    @Override
+    public List<GiftOrder> querylipinyichuliOrderPage(int page) {
+
+        //获取已兑换订单总数
+        int count = giftOrderMapper.queryDeliveredGiftsCount();
+        int countPage = count%8==0?count/8:count/8+1;
+        //获取本页面起始值
+        int start  = (page-1)*8;
+        List<GiftOrder> giftOrders = giftOrderMapper.queryDeliveredGiftsByPage(start);
+        return giftOrders;
     }
 
 }

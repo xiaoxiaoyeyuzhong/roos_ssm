@@ -1,6 +1,7 @@
 package com.gec.roos.controller;
 
 import com.gec.roos.pojo.Gift;
+import com.gec.roos.pojo.GiftOrder;
 import com.gec.roos.pojo.User;
 import com.gec.roos.service.GiftOrderService;
 import com.gec.roos.service.GiftService;
@@ -181,6 +182,20 @@ public class GiftController {
         model.addAttribute("giftorder", map.get("giftorder"));
         model.addAttribute("y",map.get("y"));
         return "back/deliveredGifts";
+    }
+
+    //分页查询已提交待发货礼品订单
+    @RequestMapping("/querylipinOrderPage")
+    @ResponseBody
+    public List<GiftOrder> querylipinOrderPage(int page){
+        return giftOrderService.querylipinOrderPage(page);
+    }
+
+    //分页查询已处理礼品订单
+    @RequestMapping("querylipinyichuliOrderPage")
+    @ResponseBody
+    public List<GiftOrder> querylipinyichuliOrderPage(int page){
+        return giftOrderService.querylipinyichuliOrderPage(page);
     }
 
 }

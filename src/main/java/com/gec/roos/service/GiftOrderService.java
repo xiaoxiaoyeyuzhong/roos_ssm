@@ -2,6 +2,7 @@ package com.gec.roos.service;
 
 import com.gec.roos.pojo.GiftOrder;
 
+import java.util.List;
 import java.util.Map;
 
 public interface GiftOrderService {
@@ -16,4 +17,11 @@ public interface GiftOrderService {
 
     //查询已处理礼品订单
     Map<String, Object> queryDeliveredGiftsByPage(int page);
+
+    //分页查询已兑换未处理礼品订单
+    List<GiftOrder> querylipinOrderPage(int page);
+
+    //分页查询已处理礼品订单
+    List<GiftOrder> querylipinyichuliOrderPage(int page);
+
 }

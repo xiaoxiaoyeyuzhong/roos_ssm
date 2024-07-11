@@ -32,7 +32,7 @@
         where o.state!="已兑换" order by o.createTime desc limit #{start},8
     </select>
 
-    <!--    分页查询已兑换未发货数据集合-->
+    <!--    分页查询已处理数据集合-->
     <select id="queryDeliveredGiftsByPage"  resultMap="Gift_orderMap">
         select o.id,o.openid,o.state,o.createTime ocreateTime , g.*
         from gift_order o left join gift g ON o.pid=g.pid

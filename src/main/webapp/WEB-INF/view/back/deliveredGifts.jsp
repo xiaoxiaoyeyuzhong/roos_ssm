@@ -133,7 +133,7 @@
 				}else{
 					$("#num").text(page-1);
 					page = $("#num").text();
-					$.post("querylipinyiculiOrderPage",{page:page},function(data){
+					$.post("querylipinyichuliOrderPage",{page:page},function(data){
 						var str;
 						$(".infos").remove();
 						var j = (page-1)*8;
@@ -164,7 +164,7 @@
 				}else{
 					$("#num").text(page+1);
 					page = $("#num").text();
-					$.post("querylipinyiculiOrderPage",{page:page},function(data){
+					$.post("querylipinyichuliOrderPage",{page:page},function(data){
 						var str;
 						$(".infos").remove();
 						var j = (page-1)*8;

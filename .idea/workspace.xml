@@ -9,8 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="1.礼品线下兑换功能实现&#10;2.已兑换订单查询mapper改用xml配置，使用resultMap，不查询所有，不然结果集不能正确和前端参数进行绑定。&#10;3.门店后台增删改查，前台展示功能实现&#10;4.登录拦截实现了一些，如果是在地址要输入参数才能访问的，输一个参数进去，可以进去，进去后，可以访问没有纳入拦截的网页。">
+    <list default="true" id="5f483717-24db-46d9-b084-391d1864002e" name="变更" comment="礼品">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/controller/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/GiftOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gec/roos/service/impl/GiftOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GiftOrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/deliveredGifts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/back/deliveredGifts.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,26 +59,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/files/idea_workplace/roos_ssm",
-    "project.structure.last.edited": "项目",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.47356322",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "046a4fc407a2738eca18d5a309ed14d2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/files/idea_workplace/roos_ssm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;库&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.47356322&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;046a4fc407a2738eca18d5a309ed14d2&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.gec.roos.service" />
@@ -234,6 +240,21 @@
       <workItem from="1719279864874" duration="255000" />
       <workItem from="1719280134801" duration="26000" />
       <workItem from="1719287186429" duration="179000" />
+      <workItem from="1719301749346" duration="1668000" />
+      <workItem from="1719303831812" duration="341000" />
+      <workItem from="1719361740807" duration="7946000" />
+      <workItem from="1719384304910" duration="30000" />
+      <workItem from="1719384540000" duration="506000" />
+      <workItem from="1719389049576" duration="169000" />
+      <workItem from="1719392370254" duration="2697000" />
+      <workItem from="1719448651334" duration="9535000" />
+      <workItem from="1719470019692" duration="8310000" />
+      <workItem from="1719496112213" duration="36000" />
+      <workItem from="1719972952036" duration="276000" />
+      <workItem from="1720422301692" duration="3521000" />
+      <workItem from="1720483457156" duration="290000" />
+      <workItem from="1720492024855" duration="645000" />
+      <workItem from="1720504451426" duration="722000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化，整合spring，mybatis，log4j2日志，springMvc，&#10;@Autowired&#10;    private AdminMapper adminMapper;&#10;存在无法自动装配的报错，但是不影响运行，有待观察">
       <created>1718699524656</created>
@@ -326,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719222734413</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="为mapper类加入了@mapper注解，serviceImpl不报错了。">
+      <created>1719302774590</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1719302774590</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,19 +385,20 @@
     <MESSAGE value="1.后台礼品增删改查实现&#10;2.前台礼品查看实现，删除地址实现。" />
     <MESSAGE value="1.礼品兑换功能实现&#10;2.后台修改礼品功能逻辑进行了修改，判断是否上传图片，如果上传图片才进行photo逻辑，不然用gift自带的图片。" />
     <MESSAGE value="1.礼品线下兑换功能实现&#10;2.已兑换订单查询mapper改用xml配置，使用resultMap，不查询所有，不然结果集不能正确和前端参数进行绑定。&#10;3.门店后台增删改查，前台展示功能实现&#10;4.登录拦截实现了一些，如果是在地址要输入参数才能访问的，输一个参数进去，可以进去，进去后，可以访问没有纳入拦截的网页。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.礼品线下兑换功能实现&#10;2.已兑换订单查询mapper改用xml配置，使用resultMap，不查询所有，不然结果集不能正确和前端参数进行绑定。&#10;3.门店后台增删改查，前台展示功能实现&#10;4.登录拦截实现了一些，如果是在地址要输入参数才能访问的，输一个参数进去，可以进去，进去后，可以访问没有纳入拦截的网页。" />
+    <MESSAGE value="为mapper类加入了@mapper注解，serviceImpl不报错了。" />
+    <option name="LAST_COMMIT_MESSAGE" value="为mapper类加入了@mapper注解，serviceImpl不报错了。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java</url>
-          <line>102</line>
+          <line>103</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/gec/roos/controller/GiftController.java</url>
-          <line>52</line>
+          <line>53</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
